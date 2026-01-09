@@ -41,10 +41,23 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        // Assign default role if roles are available
+        if (method_exists($user, 'assignRole')) {
+            try {
+                $user->assignRole('user');
+            } catch (\Throwable $e) {
+                // ignore if roles table not seeded yet
+            }
+        }
+
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        if ($user->hasRole('admin')) {
+            return redirect(route('admin.dashboard', absolute: false));
+        }
+
+        return redirect(route('user.dashboard', absolute: false));
     }
 }

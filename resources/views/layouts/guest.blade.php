@@ -14,16 +14,19 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
+    <body class="font-sans text-gray-900 antialiased bg-gradient-to-br from-purple-50 to-white">
+        <div class="min-h-screen flex flex-col items-center justify-center py-12 px-4">
+            <div class="max-w-md w-full">
+                <div class="text-center mb-6">
+                    <a href="/" class="inline-block">
+                        <div class="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">EventPro</div>
+                    </a>
+                    <p class="text-gray-600 mt-2">Create unforgettable events with ease</p>
+                </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
+                <div class="bg-white shadow-lg rounded-xl px-8 py-10">
+                    {{ $slot }}
+                </div>
             </div>
         </div>
     </body>
