@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use App\Models\Payment;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
