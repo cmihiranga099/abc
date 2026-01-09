@@ -1,27 +1,140 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard - EventPro')
+@section('title', 'Customer Dashboard - EventPro')
 
 @section('content')
-<section class="py-8 sm:py-12">
+<div class="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-slate-50 py-8 sm:py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Welcome to your Dashboard</h1>
-        <p class="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">Here you can manage your bookings, view packages, and update your profile.</p>
+        <!-- Welcome Header -->
+        <div class="mb-8 sm:mb-12">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">Welcome, {{ Auth::user()->name }}! 👋</h1>
+            <p class="text-gray-600 text-sm sm:text-base md:text-lg">Manage your bookings, packages, and payments all in one place</p>
+        </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-            <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
-                <h3 class="font-bold mb-2 text-base sm:text-lg">My Bookings</h3>
-                <p class="text-gray-600 text-sm sm:text-base">View and manage your event bookings.</p>
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
+            <!-- Total Bookings -->
+            <div class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg shadow-lg p-6 text-white hover:shadow-xl transition">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-purple-200 text-sm font-medium">Total Bookings</p>
+                        <p class="text-3xl font-bold mt-2">{{ Auth::user()->bookings()->count() }}</p>
+                    </div>
+                    <div class="text-4xl opacity-20">📅</div>
+                </div>
             </div>
-            <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
-                <h3 class="font-bold mb-2 text-base sm:text-lg">Available Packages</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Explore packages and add-ons.</p>
+
+            <!-- Confirmed Events -->
+            <div class="bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg shadow-lg p-6 text-white hover:shadow-xl transition">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-pink-200 text-sm font-medium">Confirmed Events</p>
+                        <p class="text-3xl font-bold mt-2">{{ Auth::user()->bookings()->where('status', 'confirmed')->count() }}</p>
+                    </div>
+                    <div class="text-4xl opacity-20">✅</div>
+                </div>
             </div>
-            <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
-                <h3 class="font-bold mb-2 text-base sm:text-lg">Profile</h3>
-                <p class="text-gray-600 text-sm sm:text-base">Update your personal information and preferences.</p>
+
+            <!-- Total Spent -->
+            <div class="bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg shadow-lg p-6 text-white hover:shadow-xl transition">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-cyan-200 text-sm font-medium">Total Spent</p>
+                        <p class="text-3xl font-bold mt-2">${{ Auth::user()->payments()->where('status', 'completed')->sum('amount') }}</p>
+                    </div>
+                    <div class="text-4xl opacity-20">💰</div>
+                </div>
+            </div>
+
+            <!-- Upcoming Events -->
+            <div class="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-lg shadow-lg p-6 text-white hover:shadow-xl transition">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-indigo-200 text-sm font-medium">Upcoming Events</p>
+                        <p class="text-3xl font-bold mt-2">{{ Auth::user()->bookings()->where('event_date', '>=', now())->count() }}</p>
+                    </div>
+                    <div class="text-4xl opacity-20">🎉</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 sm:mb-12">
+            <!-- New Booking CTA -->
+            <a href="{{ route('bookings.create') }}" class="group bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg shadow-lg p-8 text-white hover:shadow-xl transition">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2">Create New Booking</h3>
+                        <p class="text-purple-100 text-sm sm:text-base">Browse packages and plan your perfect event</p>
+                    </div>
+                    <div class="text-4xl sm:text-5xl group-hover:scale-110 transition">📦</div>
+                </div>
+            </a>
+
+            <!-- View All Bookings -->
+            <a href="{{ route('bookings.index') }}" class="group bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg shadow-lg p-8 text-white hover:shadow-xl transition">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-2">My Bookings</h3>
+                        <p class="text-cyan-100 text-sm sm:text-base">View and manage all your event bookings</p>
+                    </div>
+                    <div class="text-4xl sm:text-5xl group-hover:scale-110 transition">📋</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Recent Bookings -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-6 sm:p-8">
+                <h2 class="text-2xl font-bold">Recent Bookings</h2>
+                <p class="text-purple-100 mt-1">Your latest event bookings</p>
+            </div>
+
+            <div class="overflow-x-auto">
+                @if(Auth::user()->bookings()->count() > 0)
+                    <table class="w-full">
+                        <thead class="bg-gray-100 border-b border-gray-200">
+                            <tr>
+                                <th class="px-4 sm:px-6 py-3 text-left text-xs sm:text-sm font-bold text-gray-700">Event Name</th>
+                                <th class="px-4 sm:px-6 py-3 text-left text-xs sm:text-sm font-bold text-gray-700">Package</th>
+                                <th class="px-4 sm:px-6 py-3 text-left text-xs sm:text-sm font-bold text-gray-700">Date</th>
+                                <th class="px-4 sm:px-6 py-3 text-left text-xs sm:text-sm font-bold text-gray-700">Status</th>
+                                <th class="px-4 sm:px-6 py-3 text-left text-xs sm:text-sm font-bold text-gray-700">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(Auth::user()->bookings()->latest()->take(5)->get() as $booking)
+                                <tr class="border-b hover:bg-gray-50 transition">
+                                    <td class="px-4 sm:px-6 py-4 text-xs sm:text-sm text-gray-800 font-medium">{{ $booking->event_name }}</td>
+                                    <td class="px-4 sm:px-6 py-4 text-xs sm:text-sm text-gray-600">{{ $booking->package->name }}</td>
+                                    <td class="px-4 sm:px-6 py-4 text-xs sm:text-sm text-gray-600">{{ $booking->event_date->format('M d, Y') }}</td>
+                                    <td class="px-4 sm:px-6 py-4">
+                                        <span class="px-3 py-1 rounded-full text-xs font-bold
+                                            @if($booking->status === 'pending') bg-yellow-100 text-yellow-800
+                                            @elseif($booking->status === 'confirmed') bg-green-100 text-green-800
+                                            @elseif($booking->status === 'cancelled') bg-red-100 text-red-800
+                                            @else bg-blue-100 text-blue-800
+                                            @endif">
+                                            {{ ucfirst($booking->status) }}
+                                        </span>
+                                    </td>
+                                    <td class="px-4 sm:px-6 py-4">
+                                        <a href="{{ route('bookings.show', $booking) }}" class="text-purple-600 hover:text-purple-800 font-medium text-xs sm:text-sm">View</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                @else
+                    <div class="p-8 text-center">
+                        <p class="text-gray-600 text-sm sm:text-base mb-4">No bookings yet. Create your first event booking today!</p>
+                        <a href="{{ route('bookings.create') }}" class="inline-block px-6 py-2.5 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-medium text-sm">
+                            Create Booking
+                        </a>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
-</section>
+</div>
 @endsection
