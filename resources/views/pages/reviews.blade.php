@@ -4,41 +4,41 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-purple-600 to-pink-600 text-white py-16 md:py-24">
+<section class="relative bg-gradient-to-r from-purple-600 to-pink-600 text-white py-12 sm:py-16 md:py-24">
     <div class="absolute inset-0 bg-black opacity-30"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">What Our Clients Say</h1>
-        <p class="text-lg text-gray-100">Join thousands of satisfied customers</p>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">What Our Clients Say</h1>
+        <p class="text-sm sm:text-base md:text-lg text-gray-100">Join thousands of satisfied customers</p>
     </div>
 </section>
 
 <!-- Rating Summary -->
-<section class="py-16 md:py-24 bg-white">
+<section class="py-12 sm:py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-16">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 text-center mb-12 sm:mb-16">
             <div>
-                <p class="text-5xl font-bold text-purple-600 mb-2">4.9/5</p>
+                <p class="text-3xl sm:text-4xl md:text-5xl font-bold text-purple-600 mb-2">4.9/5</p>
                 <div class="flex justify-center mb-2">
-                    <span class="text-yellow-400 text-2xl">★★★★★</span>
+                    <span class="text-yellow-400 text-xl sm:text-2xl">★★★★★</span>
                 </div>
-                <p class="text-gray-600">Average Rating</p>
+                <p class="text-gray-600 text-sm sm:text-base">Average Rating</p>
             </div>
             <div>
-                <p class="text-5xl font-bold text-pink-600 mb-2">1000+</p>
-                <p class="text-gray-600 text-lg">Happy Clients</p>
-                <p class="text-gray-500 text-sm">Across various event types</p>
+                <p class="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-600 mb-2">1000+</p>
+                <p class="text-gray-600 text-sm sm:text-base md:text-lg">Happy Clients</p>
+                <p class="text-gray-500 text-xs sm:text-sm">Across various event types</p>
             </div>
             <div>
-                <p class="text-5xl font-bold text-purple-600 mb-2">98%</p>
-                <p class="text-gray-600 text-lg">Satisfaction Rate</p>
-                <p class="text-gray-500 text-sm">Would recommend to a friend</p>
+                <p class="text-3xl sm:text-4xl md:text-5xl font-bold text-purple-600 mb-2">98%</p>
+                <p class="text-gray-600 text-sm sm:text-base md:text-lg">Satisfaction Rate</p>
+                <p class="text-gray-500 text-xs sm:text-sm">Would recommend to a friend</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Testimonials -->
-<section class="py-16 md:py-24 bg-gray-50">
+<section class="py-12 sm:py-16 md:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Client Testimonials</h2>
         

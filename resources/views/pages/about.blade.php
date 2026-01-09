@@ -4,16 +4,16 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-purple-600 to-pink-600 text-white py-16 md:py-24">
+<section class="relative bg-gradient-to-r from-purple-600 to-pink-600 text-white py-12 sm:py-16 md:py-24">
     <div class="absolute inset-0 bg-black opacity-30"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">About EventPro</h1>
-        <p class="text-lg text-gray-100">Crafting Exceptional Experiences Since 2014</p>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">About EventPro</h1>
+        <p class="text-sm sm:text-base md:text-lg text-gray-100">Crafting Exceptional Experiences Since 2014</p>
     </div>
 </section>
 
 <!-- Our Story -->
-<section class="py-16 md:py-24 bg-white">
+<section class="py-12 sm:py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>

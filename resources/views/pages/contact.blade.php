@@ -4,18 +4,18 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-purple-600 to-pink-600 text-white py-16 md:py-24">
+<section class="relative bg-gradient-to-r from-purple-600 to-pink-600 text-white py-12 sm:py-16 md:py-24">
     <div class="absolute inset-0 bg-black opacity-30"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h1>
-        <p class="text-lg text-gray-100">We're here to answer your questions and help plan your perfect event</p>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Get In Touch</h1>
+        <p class="text-sm sm:text-base md:text-lg text-gray-100">We're here to answer your questions and help plan your perfect event</p>
     </div>
 </section>
 
 <!-- Contact Section -->
-<section class="py-16 md:py-24 bg-gray-50">
+<section class="py-12 sm:py-16 md:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
             <!-- Email -->
             <div class="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition">
                 <div class="text-5xl mb-4">✉️</div>
