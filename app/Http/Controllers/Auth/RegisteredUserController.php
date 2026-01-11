@@ -58,6 +58,6 @@ class RegisteredUserController extends Controller
             return redirect(route('admin.dashboard', absolute: false));
         }
 
-        return redirect(route('user.dashboard', absolute: false));
+        return redirect(route('dashboard', absolute: false));
     }
 }

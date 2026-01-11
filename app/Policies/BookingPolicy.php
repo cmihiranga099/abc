@@ -63,11 +63,4 @@ class BookingPolicy
     {
         return false;
     }
-}    /**
-     * Determine whether the user can permanently delete the model.
-     */
-    public function forceDelete(User $user, Booking $booking): bool
-    {
-        return false;
-    }
 }
