@@ -3,8 +3,9 @@
 @section('title', 'My Bookings - EventPro')
 
 @section('content')
-<div class="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50 to-slate-50 py-8 sm:py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen bg-slate-50">
+    <div class="mx-auto flex w-full max-w-7xl gap-6 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+                <section class="min-w-0 flex-1">
         <!-- Header -->
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 sm:mb-12">
             <div>
@@ -112,6 +113,7 @@
                 </a>
             </div>
         @endif
+        </section>
     </div>
 </div>
 @endsection

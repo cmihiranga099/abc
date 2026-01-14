@@ -3,8 +3,8 @@
 @section('title', 'Create Booking - EventPro')
 
 @section('content')
-<div class="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50 to-slate-50 py-8 sm:py-12">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen bg-slate-50">
+    <div class="mx-auto w-full max-w-4xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
         <!-- Header -->
         <div class="mb-8">
             <a href="{{ route('bookings.index') }}" class="text-emerald-700 hover:text-emerald-800 font-medium">← Back to Bookings</a>

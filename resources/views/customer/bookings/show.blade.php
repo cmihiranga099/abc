@@ -3,8 +3,10 @@
 @section('title', $booking->event_name . ' - EventPro')
 
 @section('content')
-<div class="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50 to-slate-50 py-8 sm:py-12">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen bg-slate-50">
+    <div class="mx-auto flex w-full max-w-7xl gap-6 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+                <section class="min-w-0 flex-1">
+            <div class="max-w-3xl">
         <!-- Header -->
         <div class="mb-8">
             <a href="{{ route('bookings.index') }}" class="text-emerald-700 hover:text-emerald-800 font-medium">← Back to Bookings</a>
@@ -47,7 +49,7 @@
                 <!-- Package Details -->
                 <div class="mb-8 pb-8 border-b">
                     <h2 class="text-xl font-bold text-gray-800 mb-4">📦 Package Details</h2>
-                    <div class="bg-gray-50 rounded-lg p-4 sm:p-6">
+                    <div class="bg-slate-50 rounded-lg p-4 sm:p-6">
                         <h3 class="font-bold text-lg text-gray-900 mb-2">{{ $booking->package->name }}</h3>
                         <p class="text-gray-600 mb-4">{{ $booking->package->description }}</p>
                         @if($booking->package->features)
@@ -67,7 +69,7 @@
                 @if($booking->special_requirements)
                     <div class="mb-8 pb-8 border-b">
                         <h2 class="text-lg font-bold text-gray-800 mb-3">📝 Special Requirements</h2>
-                        <p class="text-gray-700 bg-blue-50 p-4 rounded-lg">{{ $booking->special_requirements }}</p>
+                        <p class="text-gray-700 bg-emerald-50 p-4 rounded-lg">{{ $booking->special_requirements }}</p>
                     </div>
                 @endif
 
@@ -75,9 +77,9 @@
                 <div class="mb-8">
                     <h2 class="text-lg font-bold text-gray-800 mb-4">💳 Payment Status</h2>
                     @if($booking->status === 'pending')
-                        <div class="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-4 sm:p-6">
-                            <p class="text-sm text-yellow-800 mb-4">Your booking is awaiting payment. Complete the payment to confirm your event.</p>
-                            <a href="{{ route('payments.create', $booking->id) }}" class="inline-block px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:shadow-lg transition font-bold">
+                        <div class="bg-amber-50 border-2 border-amber-300 rounded-lg p-4 sm:p-6">
+                            <p class="text-sm text-amber-800 mb-4">Your booking is awaiting payment. Complete the payment to confirm your event.</p>
+                            <a href="{{ route('payments.create', $booking->id) }}" class="inline-block px-8 py-3 bg-gradient-to-r from-emerald-600 to-amber-500 text-white rounded-lg hover:shadow-lg transition font-bold">
                                 💰 Pay Now - ${{ number_format($booking->total_price, 2) }}
                             </a>
                         </div>
@@ -100,7 +102,7 @@
                 <!-- Action Buttons -->
                 <div class="flex flex-col sm:flex-row gap-3 pt-6 border-t">
                     @if($booking->status === 'pending')
-                        <a href="{{ route('bookings.edit', $booking->id) }}" class="px-6 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium text-center">
+                        <a href="{{ route('bookings.edit', $booking->id) }}" class="px-6 py-2.5 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition font-medium text-center">
                             ✏️ Edit Booking
                         </a>
                         <form action="{{ route('bookings.destroy', $booking->id) }}" method="POST" class="flex-1" onsubmit="return confirm('Are you sure you want to cancel this booking?')">
@@ -113,7 +115,7 @@
                         <p class="text-gray-600 text-sm">Your booking is confirmed! We'll contact you with further details.</p>
                         <form action="{{ route('payments.refund', $booking->payment->id) }}" method="POST" onsubmit="return confirm('Request a refund for this booking?')">
                             @csrf @method('POST')
-                            <button type="submit" class="px-6 py-2.5 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition font-medium">
+                            <button type="submit" class="px-6 py-2.5 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition font-medium">
                                 🔄 Request Refund
                             </button>
                         </form>
@@ -121,6 +123,8 @@
                 </div>
             </div>
         </div>
+            </div>
+        </section>
     </div>
 </div>
 @endsection

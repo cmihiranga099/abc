@@ -3,8 +3,10 @@
 @section('title', 'Edit Booking - EventPro')
 
 @section('content')
-<div class="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50 to-slate-50 py-8 sm:py-12">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen bg-slate-50">
+    <div class="mx-auto flex w-full max-w-7xl gap-6 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+                <section class="min-w-0 flex-1">
+            <div class="max-w-4xl">
         <!-- Header -->
         <div class="mb-8">
             <a href="{{ route('bookings.show', $booking->id) }}" class="text-emerald-700 hover:text-emerald-800 font-medium">← Back to Booking</a>
@@ -78,8 +80,8 @@
             </div>
 
             <!-- Info Box -->
-            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8">
-                <p class="text-sm text-blue-800">
+            <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 mb-8">
+                <p class="text-sm text-emerald-800">
                     <strong>Note:</strong> When you change the package, the total price will be automatically updated. If your booking is already confirmed, you may need to adjust the payment amount.
                 </p>
             </div>
@@ -94,6 +96,8 @@
                 </button>
             </div>
         </form>
+            </div>
+        </section>
     </div>
 </div>
 @endsection

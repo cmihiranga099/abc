@@ -3,11 +3,13 @@
 @section('title', 'Payment Checkout - EventPro')
 
 @section('content')
-<div class="min-h-screen bg-gradient-to-br from-slate-50 via-cyan-50 to-slate-50 py-8 sm:py-12">
-    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen bg-slate-50">
+    <div class="mx-auto flex w-full max-w-7xl gap-6 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+                <section class="min-w-0 flex-1">
+            <div class="max-w-5xl">
         <!-- Header -->
         <div class="mb-8">
-            <a href="{{ route('bookings.show', $booking->id) }}" class="text-cyan-600 hover:text-cyan-800 font-medium">← Back to Booking</a>
+            <a href="{{ route('bookings.show', $booking->id) }}" class="text-emerald-700 hover:text-emerald-800 font-medium">← Back to Booking</a>
             <h1 class="text-3xl sm:text-4xl font-bold mt-4 mb-2">Complete Payment</h1>
             <p class="text-gray-600">Secure payment for your event booking</p>
         </div>
@@ -22,7 +24,7 @@
                     <div class="mb-8">
                         <h2 class="text-lg font-bold text-gray-800 mb-4">💳 Payment Method</h2>
                         <div class="space-y-3">
-                            <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-cyan-300 hover:bg-cyan-50 peer-checked:border-cyan-600 peer-checked:bg-cyan-50">
+                            <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-emerald-300 hover:bg-emerald-50 peer-checked:border-emerald-600 peer-checked:bg-emerald-50">
                                 <input type="radio" name="payment_method" value="card" class="hidden peer" required {{ old('payment_method') === 'card' ? 'checked' : '' }}>
                                 <span class="text-xl mr-3">💳</span>
                                 <div>
@@ -31,7 +33,7 @@
                                 </div>
                             </label>
 
-                            <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-cyan-300 hover:bg-cyan-50 peer-checked:border-cyan-600 peer-checked:bg-cyan-50">
+                            <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-emerald-300 hover:bg-emerald-50 peer-checked:border-emerald-600 peer-checked:bg-emerald-50">
                                 <input type="radio" name="payment_method" value="bank_transfer" class="hidden peer" {{ old('payment_method') === 'bank_transfer' ? 'checked' : '' }}>
                                 <span class="text-xl mr-3">🏦</span>
                                 <div>
@@ -40,7 +42,7 @@
                                 </div>
                             </label>
 
-                            <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-cyan-300 hover:bg-cyan-50 peer-checked:border-cyan-600 peer-checked:bg-cyan-50">
+                            <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-emerald-300 hover:bg-emerald-50 peer-checked:border-emerald-600 peer-checked:bg-emerald-50">
                                 <input type="radio" name="payment_method" value="wallet" class="hidden peer" {{ old('payment_method') === 'wallet' ? 'checked' : '' }}>
                                 <span class="text-xl mr-3">👛</span>
                                 <div>
@@ -59,14 +61,14 @@
                         <!-- Cardholder Name -->
                         <div class="mb-4">
                             <label class="block text-sm font-bold text-gray-700 mb-2">Cardholder Name</label>
-                            <input type="text" name="cardholder_name" value="{{ old('cardholder_name', auth()->user()->name) }}" placeholder="John Doe" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                            <input type="text" name="cardholder_name" value="{{ old('cardholder_name', auth()->user()->name) }}" placeholder="John Doe" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400">
                             @error('cardholder_name') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                         </div>
 
                         <!-- Card Number -->
                         <div class="mb-4">
                             <label class="block text-sm font-bold text-gray-700 mb-2">Card Number</label>
-                            <input type="text" name="card_number" value="{{ old('card_number') }}" placeholder="1234 5678 9012 3456" maxlength="19" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" inputmode="numeric">
+                            <input type="text" name="card_number" value="{{ old('card_number') }}" placeholder="1234 5678 9012 3456" maxlength="19" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400" inputmode="numeric">
                             @error('card_number') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                         </div>
 
@@ -74,12 +76,12 @@
                         <div class="grid grid-cols-2 gap-4 mb-4">
                             <div>
                                 <label class="block text-sm font-bold text-gray-700 mb-2">Expiry Date</label>
-                                <input type="text" name="expiry_date" value="{{ old('expiry_date') }}" placeholder="MM/YY" maxlength="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                <input type="text" name="expiry_date" value="{{ old('expiry_date') }}" placeholder="MM/YY" maxlength="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400">
                                 @error('expiry_date') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                             </div>
                             <div>
                                 <label class="block text-sm font-bold text-gray-700 mb-2">CVV</label>
-                                <input type="text" name="cvv" value="{{ old('cvv') }}" placeholder="123" maxlength="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" inputmode="numeric">
+                                <input type="text" name="cvv" value="{{ old('cvv') }}" placeholder="123" maxlength="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400" inputmode="numeric">
                                 @error('cvv') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                             </div>
                         </div>
@@ -93,7 +95,7 @@
                     </div>
 
                     <!-- Submit Button -->
-                    <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:shadow-lg transition font-bold text-lg">
+                    <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-emerald-600 to-amber-500 text-white rounded-lg hover:shadow-lg transition font-bold text-lg">
                         Complete Payment - ${{ number_format($booking->total_price, 2) }}
                     </button>
                 </form>
@@ -133,7 +135,7 @@
                     <!-- Total -->
                     <div class="flex justify-between items-center mb-6">
                         <span class="text-lg font-bold text-gray-900">Total Amount</span>
-                        <span class="text-2xl font-bold text-cyan-600">${{ number_format($booking->total_price, 2) }}</span>
+                        <span class="text-2xl font-bold text-emerald-700">${{ number_format($booking->total_price, 2) }}</span>
                     </div>
 
                     <!-- Additional Info -->
@@ -144,6 +146,8 @@
                 </div>
             </div>
         </div>
+    </div>
+        </section>
     </div>
 </div>
 

@@ -3,11 +3,13 @@
 @section('title', 'Payment History - EventPro')
 
 @section('content')
-<div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50 py-8 sm:py-12">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen bg-slate-50">
+    <div class="mx-auto flex w-full max-w-7xl gap-6 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+                <section class="min-w-0 flex-1">
+            <div class="max-w-5xl">
         <!-- Header -->
         <div class="mb-8">
-            <a href="{{ route('bookings.index') }}" class="text-blue-600 hover:text-blue-800 font-medium">← Back to Bookings</a>
+            <a href="{{ route('bookings.index') }}" class="text-emerald-700 hover:text-emerald-800 font-medium">← Back to Bookings</a>
             <h1 class="text-3xl sm:text-4xl font-bold mt-4 mb-2">Payment History</h1>
             <p class="text-gray-600">View all your transactions and payment records</p>
         </div>
@@ -16,19 +18,19 @@
         @if($payments->count() > 0)
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                 <!-- Total Spent -->
-                <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-lg shadow-lg p-6">
+                <div class="bg-gradient-to-br from-emerald-500 to-emerald-600 text-white rounded-lg shadow-lg p-6">
                     <p class="text-white/80 text-sm mb-1">💰 Total Spent</p>
                     <p class="text-3xl font-bold">${{ number_format($payments->where('status', 'completed')->sum('amount'), 2) }}</p>
                 </div>
 
                 <!-- Total Transactions -->
-                <div class="bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-lg shadow-lg p-6">
+                <div class="bg-gradient-to-br from-amber-500 to-amber-600 text-white rounded-lg shadow-lg p-6">
                     <p class="text-white/80 text-sm mb-1">📊 Total Payments</p>
                     <p class="text-3xl font-bold">{{ $payments->count() }}</p>
                 </div>
 
                 <!-- Refunded -->
-                <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-lg shadow-lg p-6">
+                <div class="bg-gradient-to-br from-slate-500 to-slate-600 text-white rounded-lg shadow-lg p-6">
                     <p class="text-white/80 text-sm mb-1">🔄 Refunded</p>
                     <p class="text-3xl font-bold">${{ number_format($payments->where('status', 'refunded')->sum('amount'), 2) }}</p>
                 </div>
@@ -88,13 +90,13 @@
                                         <p class="text-xs text-gray-600">{{ $payment->created_at->format('g:i A') }}</p>
                                     </td>
                                     <td class="px-6 py-4">
-                                        <a href="{{ route('bookings.show', $payment->booking->id) }}" class="text-blue-600 hover:text-blue-800 font-medium text-sm">
+                                        <a href="{{ route('bookings.show', $payment->booking->id) }}" class="text-emerald-700 hover:text-emerald-800 font-medium text-sm">
                                             View
                                         </a>
                                         @if($payment->status === 'completed')
                                             <form action="{{ route('payments.refund', $payment->id) }}" method="POST" class="inline" onsubmit="return confirm('Request a refund for this payment?')">
                                                 @csrf @method('POST')
-                                                <button type="submit" class="text-orange-600 hover:text-orange-800 font-medium text-sm ml-4">
+                                                <button type="submit" class="text-amber-700 hover:text-amber-800 font-medium text-sm ml-4">
                                                     Refund
                                                 </button>
                                             </form>
@@ -146,13 +148,13 @@
                             </div>
 
                             <div class="flex gap-2">
-                                <a href="{{ route('bookings.show', $payment->booking->id) }}" class="flex-1 px-3 py-2 bg-blue-600 text-white text-sm font-medium rounded text-center hover:bg-blue-700 transition">
+                                <a href="{{ route('bookings.show', $payment->booking->id) }}" class="flex-1 px-3 py-2 bg-emerald-600 text-white text-sm font-medium rounded text-center hover:bg-emerald-700 transition">
                                     View
                                 </a>
                                 @if($payment->status === 'completed')
                                     <form action="{{ route('payments.refund', $payment->id) }}" method="POST" class="flex-1" onsubmit="return confirm('Request a refund for this payment?')">
                                         @csrf @method('POST')
-                                        <button type="submit" class="w-full px-3 py-2 bg-orange-600 text-white text-sm font-medium rounded hover:bg-orange-700 transition">
+                                        <button type="submit" class="w-full px-3 py-2 bg-amber-600 text-white text-sm font-medium rounded hover:bg-amber-700 transition">
                                             Refund
                                         </button>
                                     </form>
@@ -170,11 +172,13 @@
                 <p class="text-5xl mb-4">📭</p>
                 <h3 class="text-xl font-bold text-gray-800 mb-2">No Payments Yet</h3>
                 <p class="text-gray-600 mb-6">You haven't made any payments yet. Create your first booking to get started!</p>
-                <a href="{{ route('bookings.create') }}" class="inline-block px-6 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:shadow-lg transition font-bold">
+                <a href="{{ route('bookings.create') }}" class="inline-block px-6 py-2.5 bg-gradient-to-r from-emerald-600 to-amber-500 text-white rounded-lg hover:shadow-lg transition font-bold">
                     Create Your First Booking
                 </a>
             </div>
         @endif
+    </div>
+        </section>
     </div>
 </div>
 @endsection
