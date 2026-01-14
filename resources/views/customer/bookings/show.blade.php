@@ -4,9 +4,7 @@
 
 @section('content')
 <div class="min-h-screen bg-slate-50">
-    <div class="mx-auto flex w-full max-w-7xl gap-6 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
-                <section class="min-w-0 flex-1">
-            <div class="max-w-3xl">
+    <div class="mx-auto w-full max-w-3xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
         <!-- Header -->
         <div class="mb-8">
             <a href="{{ route('bookings.index') }}" class="text-emerald-700 hover:text-emerald-800 font-medium">← Back to Bookings</a>
@@ -123,8 +121,6 @@
                 </div>
             </div>
         </div>
-            </div>
-        </section>
     </div>
 </div>
 @endsection
