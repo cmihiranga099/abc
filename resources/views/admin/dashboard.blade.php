@@ -4,8 +4,11 @@
 
 @section('content')
 <section class="min-h-screen bg-slate-50 py-8 sm:py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div class="mx-auto flex w-full max-w-7xl gap-6 px-4 sm:px-6 lg:px-8">
+        @include('partials.admin-sidebar', ['active' => 'dashboard'])
+
+        <div class="min-w-0 flex-1">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
                 <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold">Admin Dashboard</h1>
                 <p class="text-sm text-slate-500 mt-1">Manage bookings, payments, users, and packages.</p>
@@ -24,7 +27,7 @@
             </div>
         @endif
 
-        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                 <p class="text-xs uppercase tracking-wide text-slate-500">Users</p>
                 <p class="mt-2 text-2xl font-semibold text-slate-900">{{ $metrics['users'] }}</p>
@@ -47,7 +50,7 @@
             </div>
         </div>
 
-        <div class="mt-6 grid gap-6 lg:grid-cols-2">
+            <div class="mt-6 grid gap-6 lg:grid-cols-2">
             <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                 <div class="flex items-center justify-between">
                     <h2 class="text-lg font-semibold text-slate-900">Recent bookings</h2>
@@ -86,6 +89,7 @@
                         <p class="text-sm text-slate-500">No payments found.</p>
                     @endforelse
                 </div>
+            </div>
             </div>
         </div>
     </div>
