@@ -36,6 +36,10 @@
                 <span class="h-2 w-2 rounded-full bg-teal-500"></span>
                 Payments
             </a>
+            <a href="{{ route('admin.profile.edit') }}" class="flex items-center gap-3 rounded-xl px-3 py-2 {{ $active === 'profile' ? 'bg-slate-100 font-semibold text-slate-900' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900' }}">
+                <span class="h-2 w-2 rounded-full bg-rose-500"></span>
+                Profile
+            </a>
         </nav>
     </div>
 

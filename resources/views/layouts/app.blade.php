@@ -146,10 +146,10 @@
                     <div>
                         <h4 class="text-white font-bold mb-4">Services</h4>
                         <ul class="space-y-2 text-sm">
-                            <li><a href="#" class="hover:text-amber-400 transition">Wedding Planning</a></li>
-                            <li><a href="#" class="hover:text-amber-400 transition">Corporate Events</a></li>
-                            <li><a href="#" class="hover:text-amber-400 transition">Birthday Parties</a></li>
-                            <li><a href="#" class="hover:text-amber-400 transition">Concerts</a></li>
+                            <li><a href="{{ route('packages') }}" class="hover:text-amber-400 transition">Wedding Planning</a></li>
+                            <li><a href="{{ route('packages') }}" class="hover:text-amber-400 transition">Corporate Events</a></li>
+                            <li><a href="{{ route('packages') }}" class="hover:text-amber-400 transition">Birthday Parties</a></li>
+                            <li><a href="{{ route('packages') }}" class="hover:text-amber-400 transition">Concerts</a></li>
                         </ul>
                     </div>
                     <div>

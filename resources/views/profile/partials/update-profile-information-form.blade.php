@@ -1,3 +1,8 @@
+@php
+    $profileUpdateRoute = $profileUpdateRoute ?? 'profile.update';
+    $verificationRoute = $verificationRoute ?? 'verification.send';
+@endphp
+
 <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900">
@@ -9,11 +14,11 @@
         </p>
     </header>
 
-    <form id="send-verification" method="post" action="{{ route('verification.send') }}">
+    <form id="send-verification" method="post" action="{{ route($verificationRoute) }}">
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
+    <form method="post" action="{{ route($profileUpdateRoute) }}" class="mt-6 space-y-6" enctype="multipart/form-data">
         @csrf
         @method('patch')
 

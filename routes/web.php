@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\BookingController as AdminBookingController;
 use App\Http\Controllers\Admin\PackageController as AdminPackageController;
 use App\Http\Controllers\Admin\PaymentController as AdminPaymentController;
+use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\UserDashboardController;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,9 @@ Route::middleware(['auth', App\Http\Middleware\EnsureUserIsAdmin::class])->prefi
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
     Route::post('/payments/sync-bookings', [AdminController::class, 'syncBookingStatuses'])->name('payments.sync-bookings');
     Route::post('/payments/{payment}/sync-booking', [AdminPaymentController::class, 'syncBooking'])->name('payments.sync-booking');
+    Route::get('/profile', [AdminProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [AdminProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [AdminProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('users', AdminUserController::class);
     Route::resource('packages', AdminPackageController::class);
     Route::resource('bookings', AdminBookingController::class);
