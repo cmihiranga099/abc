@@ -13,12 +13,18 @@
 
 <section class="py-12 bg-slate-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
-            <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <form id="customizer" class="space-y-6">
+        @if(session('error'))
+            <div class="mb-6 rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">
+                {{ session('error') }}
+            </div>
+        @endif
+        <form id="customizer" method="POST" action="{{ route('customize.book') }}">
+            @csrf
+            <div class="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
+                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm space-y-6">
                     <div>
                         <label class="text-sm font-semibold text-slate-700">Service Type</label>
-                        <select id="serviceType" class="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm">
+                        <select id="serviceType" name="service" class="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm">
                             @php
                                 $services = [
                                     'Wedding Planning',
@@ -35,20 +41,28 @@
 
                     <div class="grid gap-4 sm:grid-cols-2">
                         <div>
+                            <label class="text-sm font-semibold text-slate-700">Event Name</label>
+                            <input id="eventName" name="event_name" type="text" class="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm" placeholder="e.g., Wedding Celebration" required>
+                        </div>
+                        <div>
+                            <label class="text-sm font-semibold text-slate-700">Location</label>
+                            <input id="eventLocation" name="location" type="text" class="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm" placeholder="City, Venue" required>
+                        </div>
+                        <div>
                             <label class="text-sm font-semibold text-slate-700">Guest Count</label>
-                            <input id="guestCount" type="number" min="10" max="500" value="80" class="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm">
+                            <input id="guestCount" name="guest_count" type="number" min="10" max="500" value="80" class="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm" required>
                         </div>
                         <div>
                             <label class="text-sm font-semibold text-slate-700">Event Date</label>
-                            <input id="eventDate" type="date" class="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm">
+                            <input id="eventDate" name="event_date" type="date" class="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm" required>
                         </div>
                         <div>
                             <label class="text-sm font-semibold text-slate-700">Duration (hours)</label>
-                            <input id="durationHours" type="number" min="2" max="12" value="4" class="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm">
+                            <input id="durationHours" name="duration" type="number" min="2" max="12" value="4" class="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm" required>
                         </div>
                         <div>
                             <label class="text-sm font-semibold text-slate-700">Venue Type</label>
-                            <select id="venueType" class="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm">
+                            <select id="venueType" name="venue" class="mt-2 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm">
                                 <option value="indoor">Indoor</option>
                                 <option value="outdoor">Outdoor</option>
                             </select>
@@ -76,10 +90,10 @@
                             </label>
                         </div>
                     </div>
-                </form>
-            </div>
+                    <input type="hidden" id="addonsField" name="addons" value="">
+                </div>
 
-            <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                 <h2 class="text-lg font-semibold text-slate-900">Estimated Total</h2>
                 <p class="mt-1 text-xs text-slate-500">Includes base service, per-guest cost, add-ons, and venue/duration adjustments.</p>
 
@@ -111,14 +125,15 @@
                     <p id="totalCost" class="mt-2 text-2xl font-semibold">$0</p>
                 </div>
 
-                <a id="bookLink" href="{{ route('bookings.create') }}" class="mt-6 inline-flex w-full items-center justify-center rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700">
+                <button type="submit" class="mt-6 inline-flex w-full items-center justify-center rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700">
                     Book Now
-                </a>
+                </button>
                 <a href="{{ route('contact') }}" class="mt-3 inline-flex w-full items-center justify-center rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">
                     Request a Custom Quote
                 </a>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 </section>
 
@@ -132,6 +147,7 @@
     };
 
     const serviceType = document.getElementById('serviceType');
+    const eventName = document.getElementById('eventName');
     const guestCount = document.getElementById('guestCount');
     const eventDate = document.getElementById('eventDate');
     const durationHours = document.getElementById('durationHours');
@@ -147,7 +163,7 @@
     const venueCost = document.getElementById('venueCost');
     const addonCost = document.getElementById('addonCost');
     const totalCost = document.getElementById('totalCost');
-    const bookLink = document.getElementById('bookLink');
+    const addonsField = document.getElementById('addonsField');
 
     const formatCurrency = (value) => `$${value.toLocaleString(undefined, { minimumFractionDigits: 0 })}`;
 
@@ -184,23 +200,21 @@
         if (addonDj.checked) addons.push('DJ & Sound');
         if (addonCatering.checked) addons.push('Catering');
 
-        const params = new URLSearchParams({
-            service,
-            guest_count: guests,
-            event_date: eventDate.value,
-            duration: hours,
-            venue: venueType.value,
-            addons: addons.join(','),
-            estimate: total,
-        });
+        addonsField.value = addons.join(',');
+    };
 
-        bookLink.href = `{{ route('bookings.create') }}?${params.toString()}`;
+    const syncEventName = () => {
+        if (!eventName.value.trim()) {
+            eventName.value = `${serviceType.value} Event`;
+        }
     };
 
     [serviceType, guestCount, eventDate, durationHours, venueType, addonPhotography, addonVideography, addonDj, addonCatering]
         .forEach((input) => input.addEventListener('input', calculateTotal));
+    serviceType.addEventListener('change', syncEventName);
 
     calculateTotal();
+    syncEventName();
 })();
 </script>
 @endsection

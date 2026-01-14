@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\PackageController as AdminPackageController;
 use App\Http\Controllers\Admin\PaymentController as AdminPaymentController;
 use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\CustomizationController;
 use App\Http\Controllers\UserDashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,8 @@ Route::middleware(['auth', App\Http\Middleware\EnsureUserIsAdmin::class])->prefi
 Route::middleware('auth')->group(function () {
     // User Dashboard
     Route::get('/user/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard');
+
+    Route::post('/customize/book', [CustomizationController::class, 'store'])->name('customize.book');
     
     // Booking CRUD Routes
     Route::resource('bookings', BookingController::class);

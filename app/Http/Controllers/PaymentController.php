@@ -31,6 +31,12 @@ class PaymentController extends Controller
     {
         $this->authorize('view', $booking);
 
+        if ($request->filled('card_number')) {
+            $request->merge([
+                'card_number' => preg_replace('/\s+/', '', $request->input('card_number')),
+            ]);
+        }
+
         $validated = $request->validate([
             'payment_method' => 'required|in:card,bank_transfer,wallet',
             'cardholder_name' => 'required_if:payment_method,card|string',
