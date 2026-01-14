@@ -3,6 +3,28 @@
 @section('title', 'Create Booking - EventPro')
 
 @section('content')
+@php
+    $prefillService = request('service');
+    $prefillEstimate = request('estimate');
+    $prefillGuests = request('guest_count');
+    $prefillDate = request('event_date');
+    $prefillDuration = request('duration');
+    $prefillVenue = request('venue');
+    $prefillAddons = request('addons');
+
+    $prefillNotes = array_filter([
+        $prefillService ? "Service: {$prefillService}" : null,
+        $prefillGuests ? "Guests: {$prefillGuests}" : null,
+        $prefillDate ? "Event date: {$prefillDate}" : null,
+        $prefillDuration ? "Duration: {$prefillDuration} hours" : null,
+        $prefillVenue ? "Venue: {$prefillVenue}" : null,
+        $prefillAddons ? "Add-ons: {$prefillAddons}" : null,
+        $prefillEstimate ? "Estimated total: $" . number_format((float) $prefillEstimate, 0) : null,
+    ]);
+
+    $prefillSpecial = trim(implode("\n", $prefillNotes));
+@endphp
+
 <div class="min-h-screen bg-slate-50">
     <div class="mx-auto flex w-full max-w-7xl gap-6 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
         @include('partials.customer-sidebar', ['active' => 'bookings'])
@@ -15,6 +37,12 @@
             <h1 class="text-3xl sm:text-4xl font-bold mt-4 mb-2">Create New Booking</h1>
             <p class="text-gray-600">Select a package and fill in your event details</p>
         </div>
+
+        @if($prefillEstimate)
+            <div class="mb-6 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
+                Estimated total from customization: ${{ number_format((float) $prefillEstimate, 0) }}
+            </div>
+        @endif
 
         <form action="{{ route('bookings.store') }}" method="POST" class="bg-white rounded-lg shadow-lg p-6 sm:p-8">
             @csrf
@@ -47,14 +75,14 @@
                     <!-- Event Name -->
                     <div>
                         <label class="block text-sm font-bold text-gray-700 mb-2">Event Name *</label>
-                        <input type="text" name="event_name" value="{{ old('event_name') }}" placeholder="e.g., Sarah & Mike's Wedding" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400" required>
+                        <input type="text" name="event_name" value="{{ old('event_name', $prefillService ? $prefillService . ' Event' : '') }}" placeholder="e.g., Sarah & Mike's Wedding" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400" required>
                         @error('event_name') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                     </div>
 
                     <!-- Event Date -->
                     <div>
                         <label class="block text-sm font-bold text-gray-700 mb-2">Event Date *</label>
-                        <input type="date" name="event_date" value="{{ old('event_date') }}" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400" required>
+                        <input type="date" name="event_date" value="{{ old('event_date', $prefillDate) }}" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400" required>
                         @error('event_date') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                     </div>
 
@@ -68,14 +96,14 @@
                     <!-- Guest Count -->
                     <div>
                         <label class="block text-sm font-bold text-gray-700 mb-2">Number of Guests *</label>
-                        <input type="number" name="guest_count" value="{{ old('guest_count') }}" placeholder="10-500" min="10" max="500" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400" required>
+                        <input type="number" name="guest_count" value="{{ old('guest_count', $prefillGuests) }}" placeholder="10-500" min="10" max="500" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400" required>
                         @error('guest_count') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                     </div>
 
                     <!-- Special Requirements -->
                     <div class="md:col-span-2">
                         <label class="block text-sm font-bold text-gray-700 mb-2">Special Requirements</label>
-                        <textarea name="special_requirements" placeholder="Any special requests or requirements?" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400">{{ old('special_requirements') }}</textarea>
+                        <textarea name="special_requirements" placeholder="Any special requests or requirements?" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400">{{ old('special_requirements', $prefillSpecial) }}</textarea>
                         @error('special_requirements') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                     </div>
                 </div>

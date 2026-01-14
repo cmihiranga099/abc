@@ -172,32 +172,32 @@
                 <h3 class="text-lg font-bold text-slate-900 mb-2">Wedding Planning</h3>
                 <p class="text-sm text-slate-600 mb-6">Full-service planning, design, and coordination.</p>
                 <div class="flex gap-3">
-                    <a href="{{ route('contact') }}" class="flex-1 text-center rounded-lg border border-emerald-600 px-3 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">Customize</a>
-                    <a href="{{ route('bookings.create') }}" class="flex-1 text-center rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Book</a>
+                    <a href="{{ route('customize', ['service' => 'Wedding Planning']) }}" class="flex-1 text-center rounded-lg border border-emerald-600 px-3 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">Customize</a>
+                    <a href="{{ route('customize', ['service' => 'Wedding Planning']) }}" class="flex-1 text-center rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Book</a>
                 </div>
             </div>
             <div class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:shadow-lg transition">
                 <h3 class="text-lg font-bold text-slate-900 mb-2">Corporate Events</h3>
                 <p class="text-sm text-slate-600 mb-6">Conferences, launches, and team experiences.</p>
                 <div class="flex gap-3">
-                    <a href="{{ route('contact') }}" class="flex-1 text-center rounded-lg border border-emerald-600 px-3 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">Customize</a>
-                    <a href="{{ route('bookings.create') }}" class="flex-1 text-center rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Book</a>
+                    <a href="{{ route('customize', ['service' => 'Corporate Events']) }}" class="flex-1 text-center rounded-lg border border-emerald-600 px-3 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">Customize</a>
+                    <a href="{{ route('customize', ['service' => 'Corporate Events']) }}" class="flex-1 text-center rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Book</a>
                 </div>
             </div>
             <div class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:shadow-lg transition">
                 <h3 class="text-lg font-bold text-slate-900 mb-2">Birthday Parties</h3>
                 <p class="text-sm text-slate-600 mb-6">Themes, decor, entertainment, and catering.</p>
                 <div class="flex gap-3">
-                    <a href="{{ route('contact') }}" class="flex-1 text-center rounded-lg border border-emerald-600 px-3 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">Customize</a>
-                    <a href="{{ route('bookings.create') }}" class="flex-1 text-center rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Book</a>
+                    <a href="{{ route('customize', ['service' => 'Birthday Parties']) }}" class="flex-1 text-center rounded-lg border border-emerald-600 px-3 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">Customize</a>
+                    <a href="{{ route('customize', ['service' => 'Birthday Parties']) }}" class="flex-1 text-center rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Book</a>
                 </div>
             </div>
             <div class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:shadow-lg transition">
                 <h3 class="text-lg font-bold text-slate-900 mb-2">Concerts</h3>
                 <p class="text-sm text-slate-600 mb-6">Stage, sound, logistics, and security planning.</p>
                 <div class="flex gap-3">
-                    <a href="{{ route('contact') }}" class="flex-1 text-center rounded-lg border border-emerald-600 px-3 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">Customize</a>
-                    <a href="{{ route('bookings.create') }}" class="flex-1 text-center rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Book</a>
+                    <a href="{{ route('customize', ['service' => 'Concerts']) }}" class="flex-1 text-center rounded-lg border border-emerald-600 px-3 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">Customize</a>
+                    <a href="{{ route('customize', ['service' => 'Concerts']) }}" class="flex-1 text-center rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Book</a>
                 </div>
             </div>
         </div>

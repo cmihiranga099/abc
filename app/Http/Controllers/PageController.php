@@ -21,6 +21,13 @@ class PageController extends Controller
         return view('pages.packages');
     }
 
+    public function customize(Request $request)
+    {
+        return view('pages.customize', [
+            'service' => $request->query('service'),
+        ]);
+    }
+
     public function reviews()
     {
         return view('pages.reviews');
