@@ -35,7 +35,7 @@
                             <p class="text-xs uppercase tracking-wide text-slate-500">Total bookings</p>
                             <p class="mt-2 text-2xl font-semibold text-slate-900">{{ $totalBookings }}</p>
                         </div>
-                        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700">
+                        <div class="flex h-12 w-12 shrink-0 aspect-square items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
                             B
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                             <p class="text-xs uppercase tracking-wide text-slate-500">Confirmed events</p>
                             <p class="mt-2 text-2xl font-semibold text-slate-900">{{ $confirmedBookings }}</p>
                         </div>
-                        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
+                        <div class="flex h-12 w-12 shrink-0 aspect-square items-center justify-center rounded-full bg-amber-100 text-amber-700">
                             C
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                             <p class="text-xs uppercase tracking-wide text-slate-500">Upcoming events</p>
                             <p class="mt-2 text-2xl font-semibold text-slate-900">{{ $upcomingBookings }}</p>
                         </div>
-                        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-sky-100 text-sky-700">
+                        <div class="flex h-12 w-12 shrink-0 aspect-square items-center justify-center rounded-full bg-sky-100 text-sky-700">
                             U
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                             <p class="text-xs uppercase tracking-wide text-slate-500">Total spent</p>
                             <p class="mt-2 text-2xl font-semibold text-slate-900">${{ number_format($totalSpent, 2) }}</p>
                         </div>
-                        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700">
+                        <div class="flex h-12 w-12 shrink-0 aspect-square items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
                             $
                         </div>
                     </div>
@@ -142,14 +142,7 @@
                         </div>
                     </div>
 
-                    <!-- Profile card -->
-                    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                        <div class="flex items-center justify-between">
-                            <h2 class="text-lg font-semibold text-slate-900">Profile</h2>
-                            <a href="{{ route('profile.edit') }}" class="text-xs font-semibold text-emerald-700 hover:text-emerald-800">Open profile</a>
-                        </div>
-                        <p class="mt-3 text-sm text-slate-500">Manage your account details, password, and preferences on the profile page.</p>
-                    </div>
+
                 </div>
             </div>
         </section>

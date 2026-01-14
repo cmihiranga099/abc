@@ -31,4 +31,14 @@ class Payment extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public static function mapBookingStatus(string $paymentStatus): string
+    {
+        return match ($paymentStatus) {
+            'completed' => 'confirmed',
+            'refunded' => 'cancelled',
+            'failed' => 'cancelled',
+            default => 'pending',
+        };
+    }
 }

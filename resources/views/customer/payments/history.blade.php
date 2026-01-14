@@ -5,7 +5,9 @@
 @section('content')
 <div class="min-h-screen bg-slate-50">
     <div class="mx-auto flex w-full max-w-7xl gap-6 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
-                <section class="min-w-0 flex-1">
+        @include('partials.customer-sidebar', ['active' => 'payments'])
+
+        <section class="min-w-0 flex-1">
             <div class="max-w-5xl">
         <!-- Header -->
         <div class="mb-8">
@@ -177,7 +179,7 @@
                 </a>
             </div>
         @endif
-    </div>
+            </div>
         </section>
     </div>
 </div>

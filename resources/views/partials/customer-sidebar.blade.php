@@ -6,7 +6,7 @@
 <aside class="hidden w-64 flex-shrink-0 lg:block">
     <div class="rounded-2xl border border-emerald-100 bg-white/80 p-5 shadow-sm">
         <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-amber-400 text-white font-bold">
+            <div class="flex h-12 w-12 shrink-0 aspect-square items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-amber-400 text-white font-bold">
                 EP
             </div>
             <div>
@@ -49,7 +49,7 @@
 
     <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
         <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-600 text-white font-semibold">
+            <div class="flex h-12 w-12 shrink-0 aspect-square items-center justify-center rounded-full bg-emerald-600 text-white font-semibold">
                 {{ $sidebarUser ? strtoupper(substr($sidebarUser->name, 0, 1)) : 'EP' }}
             </div>
             <div>

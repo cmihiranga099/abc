@@ -6,6 +6,10 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\BookingController as AdminBookingController;
+use App\Http\Controllers\Admin\PackageController as AdminPackageController;
+use App\Http\Controllers\Admin\PaymentController as AdminPaymentController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\UserDashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +22,15 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
 // Dashboard Routes
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/admin/dashboard', [AdminController::class, 'index'])->middleware(['auth', App\Http\Middleware\EnsureUserIsAdmin::class])->name('admin.dashboard');
+Route::middleware(['auth', App\Http\Middleware\EnsureUserIsAdmin::class])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+    Route::post('/payments/sync-bookings', [AdminController::class, 'syncBookingStatuses'])->name('payments.sync-bookings');
+    Route::post('/payments/{payment}/sync-booking', [AdminPaymentController::class, 'syncBooking'])->name('payments.sync-booking');
+    Route::resource('users', AdminUserController::class);
+    Route::resource('packages', AdminPackageController::class);
+    Route::resource('bookings', AdminBookingController::class);
+    Route::resource('payments', AdminPaymentController::class);
+});
 
 // Customer Routes (Protected by auth)
 Route::middleware('auth')->group(function () {
