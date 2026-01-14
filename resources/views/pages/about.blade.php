@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-purple-600 to-pink-600 text-white py-12 sm:py-16 md:py-24">
+<section class="relative bg-gradient-to-r from-emerald-600 to-amber-500 text-white py-12 sm:py-16 md:py-24">
     <div class="absolute inset-0 bg-black opacity-30"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">About EventPro</h1>
@@ -22,21 +22,21 @@
                 <p class="text-gray-600 mb-4">Over the past decade, we've had the privilege of creating magical moments for thousands of clients, from intimate gatherings to large-scale corporate events. Our success is built on a foundation of creativity, attention to detail, and genuine care for our clients' visions.</p>
                 <p class="text-gray-600">We believe that every event tells a story, and we're honored to be part of yours.</p>
             </div>
-            <div class="bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg p-8 text-white">
+            <div class="bg-gradient-to-br from-emerald-400 to-amber-300 rounded-lg p-8 text-white">
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-purple-600 rounded-lg p-6 text-center">
+                    <div class="bg-emerald-600 rounded-lg p-6 text-center">
                         <p class="text-3xl font-bold mb-2">1000+</p>
                         <p class="text-sm">Events Delivered</p>
                     </div>
-                    <div class="bg-pink-600 rounded-lg p-6 text-center">
+                    <div class="bg-amber-600 rounded-lg p-6 text-center">
                         <p class="text-3xl font-bold mb-2">50+</p>
                         <p class="text-sm">Team Members</p>
                     </div>
-                    <div class="bg-purple-600 rounded-lg p-6 text-center">
+                    <div class="bg-emerald-600 rounded-lg p-6 text-center">
                         <p class="text-3xl font-bold mb-2">98%</p>
                         <p class="text-sm">Client Satisfaction</p>
                     </div>
-                    <div class="bg-pink-600 rounded-lg p-6 text-center">
+                    <div class="bg-amber-600 rounded-lg p-6 text-center">
                         <p class="text-3xl font-bold mb-2">10+</p>
                         <p class="text-sm">Years Experience</p>
                     </div>
@@ -77,41 +77,41 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <!-- Team Member 1 -->
             <div class="text-center">
-                <div class="bg-gradient-to-br from-purple-400 to-pink-400 rounded-full w-40 h-40 mx-auto mb-4 flex items-center justify-center text-white text-5xl">
+                <div class="bg-gradient-to-br from-emerald-400 to-amber-300 rounded-full w-40 h-40 mx-auto mb-4 flex items-center justify-center text-white text-5xl">
                     👨
                 </div>
                 <h3 class="text-lg font-bold">Sarah Johnson</h3>
-                <p class="text-purple-600 font-semibold">Founder & CEO</p>
+                <p class="text-emerald-700 font-semibold">Founder & CEO</p>
                 <p class="text-gray-600 text-sm mt-2">10+ years of event management experience</p>
             </div>
 
             <!-- Team Member 2 -->
             <div class="text-center">
-                <div class="bg-gradient-to-br from-purple-400 to-pink-400 rounded-full w-40 h-40 mx-auto mb-4 flex items-center justify-center text-white text-5xl">
+                <div class="bg-gradient-to-br from-emerald-400 to-amber-300 rounded-full w-40 h-40 mx-auto mb-4 flex items-center justify-center text-white text-5xl">
                     👩
                 </div>
                 <h3 class="text-lg font-bold">Michael Chen</h3>
-                <p class="text-purple-600 font-semibold">Creative Director</p>
+                <p class="text-emerald-700 font-semibold">Creative Director</p>
                 <p class="text-gray-600 text-sm mt-2">Award-winning event designer</p>
             </div>
 
             <!-- Team Member 3 -->
             <div class="text-center">
-                <div class="bg-gradient-to-br from-purple-400 to-pink-400 rounded-full w-40 h-40 mx-auto mb-4 flex items-center justify-center text-white text-5xl">
+                <div class="bg-gradient-to-br from-emerald-400 to-amber-300 rounded-full w-40 h-40 mx-auto mb-4 flex items-center justify-center text-white text-5xl">
                     👨
                 </div>
                 <h3 class="text-lg font-bold">Emma Rodriguez</h3>
-                <p class="text-purple-600 font-semibold">Operations Manager</p>
+                <p class="text-emerald-700 font-semibold">Operations Manager</p>
                 <p class="text-gray-600 text-sm mt-2">Expert in logistics and coordination</p>
             </div>
 
             <!-- Team Member 4 -->
             <div class="text-center">
-                <div class="bg-gradient-to-br from-purple-400 to-pink-400 rounded-full w-40 h-40 mx-auto mb-4 flex items-center justify-center text-white text-5xl">
+                <div class="bg-gradient-to-br from-emerald-400 to-amber-300 rounded-full w-40 h-40 mx-auto mb-4 flex items-center justify-center text-white text-5xl">
                     👩
                 </div>
                 <h3 class="text-lg font-bold">David Thompson</h3>
-                <p class="text-purple-600 font-semibold">Lead Coordinator</p>
+                <p class="text-emerald-700 font-semibold">Lead Coordinator</p>
                 <p class="text-gray-600 text-sm mt-2">Specialist in corporate events</p>
             </div>
         </div>
@@ -124,7 +124,7 @@
         <h2 class="text-3xl md:py-4xl font-bold text-center mb-12">What Makes Us Different</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="flex items-start">
-                <svg class="h-8 w-8 text-purple-600 mr-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="h-8 w-8 text-emerald-700 mr-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                 </svg>
                 <div>
@@ -133,7 +133,7 @@
                 </div>
             </div>
             <div class="flex items-start">
-                <svg class="h-8 w-8 text-purple-600 mr-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="h-8 w-8 text-emerald-700 mr-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                 </svg>
                 <div>
@@ -142,7 +142,7 @@
                 </div>
             </div>
             <div class="flex items-start">
-                <svg class="h-8 w-8 text-purple-600 mr-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="h-8 w-8 text-emerald-700 mr-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                 </svg>
                 <div>
@@ -151,7 +151,7 @@
                 </div>
             </div>
             <div class="flex items-start">
-                <svg class="h-8 w-8 text-purple-600 mr-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="h-8 w-8 text-emerald-700 mr-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                 </svg>
                 <div>

@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-purple-600 to-pink-600 text-white py-12 sm:py-16 md:py-24">
+<section class="relative bg-gradient-to-r from-emerald-600 to-amber-500 text-white py-12 sm:py-16 md:py-24">
     <div class="absolute inset-0 bg-black opacity-30"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Event Packages</h1>
@@ -66,9 +66,9 @@
             </div>
 
             <!-- Professional Package -->
-            <div class="bg-white rounded-lg shadow-2xl overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-1 md:hover:-translate-y-2 border-4 border-purple-500 relative">
-                <div class="absolute top-0 right-0 bg-purple-500 text-white px-3 sm:px-4 py-1 text-xs sm:text-sm font-bold">POPULAR</div>
-                <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-6 sm:p-8 text-center">
+            <div class="bg-white rounded-lg shadow-2xl overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-1 md:hover:-translate-y-2 border-4 border-emerald-500 relative">
+                <div class="absolute top-0 right-0 bg-emerald-500 text-white px-3 sm:px-4 py-1 text-xs sm:text-sm font-bold">POPULAR</div>
+                <div class="bg-gradient-to-r from-emerald-600 to-amber-500 text-white p-6 sm:p-8 text-center">
                     <h3 class="text-xl sm:text-2xl font-bold mb-2">Professional</h3>
                     <p class="text-3xl sm:text-4xl font-bold mb-4">$4,500</p>
                     <p class="text-xs sm:text-sm opacity-90">For gatherings up to 200 guests</p>
@@ -106,7 +106,7 @@
                             <span>Day-of Coordination</span>
                         </li>
                     </ul>
-                    <a href="/contact" class="w-full px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-lg hover:shadow-lg transition text-center block">
+                    <a href="/contact" class="w-full px-4 py-2 bg-gradient-to-r from-emerald-600 to-amber-500 text-white font-bold rounded-lg hover:shadow-lg transition text-center block">
                         Choose Plan
                     </a>
                 </div>
@@ -166,36 +166,36 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Add-On Services</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-purple-600">
+            <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-emerald-600">
                 <h3 class="font-bold text-lg mb-2">Photography</h3>
                 <p class="text-gray-600 text-sm mb-2">Professional photo coverage</p>
-                <p class="text-purple-600 font-bold">+ $500</p>
+                <p class="text-emerald-700 font-bold">+ $500</p>
             </div>
-            <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-pink-600">
+            <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-amber-600">
                 <h3 class="font-bold text-lg mb-2">Videography</h3>
                 <p class="text-gray-600 text-sm mb-2">Full event video production</p>
-                <p class="text-pink-600 font-bold">+ $800</p>
+                <p class="text-amber-600 font-bold">+ $800</p>
             </div>
-            <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-purple-600">
+            <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-emerald-600">
                 <h3 class="font-bold text-lg mb-2">DJ & Sound</h3>
                 <p class="text-gray-600 text-sm mb-2">Professional DJ and sound system</p>
-                <p class="text-purple-600 font-bold">+ $600</p>
+                <p class="text-emerald-700 font-bold">+ $600</p>
             </div>
-            <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-pink-600">
+            <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-amber-600">
                 <h3 class="font-bold text-lg mb-2">Catering</h3>
                 <p class="text-gray-600 text-sm mb-2">Premium catering service</p>
-                <p class="text-pink-600 font-bold">+ Varies</p>
+                <p class="text-amber-600 font-bold">+ Varies</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- CTA Section -->
-<section class="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-16">
+<section class="bg-gradient-to-r from-emerald-600 to-amber-500 text-white py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Book Your Event?</h2>
         <p class="text-lg mb-8">Contact us today to customize your perfect package</p>
-        <a href="/contact" class="inline-block px-8 py-3 bg-white text-purple-600 font-bold rounded-lg hover:shadow-lg transition">
+        <a href="/contact" class="inline-block px-8 py-3 bg-white text-emerald-700 font-bold rounded-lg hover:shadow-lg transition">
             Get Started
         </a>
     </div>

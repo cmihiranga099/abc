@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-emerald: #0f766e;
+    --brand-amber: #f59e0b;
+    --brand-ink: #0f172a;
+    --brand-cream: #f8f7f2;
+  }
+
+  body {
+    @apply text-slate-900 bg-slate-50;
+  }
+
+  h1, h2, h3 {
+    @apply tracking-tight;
+  }
+
+  a {
+    @apply transition-colors;
+  }
+}

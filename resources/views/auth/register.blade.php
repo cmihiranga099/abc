@@ -45,7 +45,7 @@
             <x-input-label for="password" :value="__('Password')" />
             <x-text-input 
                 id="password" 
-                class="mt-1 bg-gradient-to-r from-slate-50 to-indigo-50 border-indigo-200"
+                class="mt-1 bg-gradient-to-r from-slate-50 to-teal-50 border-teal-200"
                 type="password"
                 name="password"
                 placeholder="••••••••"
@@ -53,7 +53,7 @@
                 autocomplete="new-password" 
             />
             <x-input-error :messages="$errors->get('password')" />
-            <p class="text-xs text-indigo-600 mt-2 font-medium">At least 8 characters with uppercase, lowercase, and numbers</p>
+            <p class="text-xs text-teal-600 mt-2 font-medium">At least 8 characters with uppercase, lowercase, and numbers</p>
         </div>
 
         <!-- Confirm Password -->
@@ -61,7 +61,7 @@
             <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
             <x-text-input 
                 id="password_confirmation" 
-                class="mt-1 bg-gradient-to-r from-slate-50 to-purple-50 border-purple-200"
+                class="mt-1 bg-gradient-to-r from-slate-50 to-emerald-50 border-emerald-200"
                 type="password"
                 name="password_confirmation" 
                 placeholder="••••••••"

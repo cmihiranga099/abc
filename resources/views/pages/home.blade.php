@@ -4,16 +4,16 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-purple-600 to-pink-600 text-white py-12 sm:py-16 md:py-32">
+<section class="relative bg-gradient-to-r from-emerald-600 to-amber-500 text-white py-12 sm:py-16 md:py-32">
     <div class="absolute inset-0 bg-black opacity-30"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">Create Unforgettable Events</h1>
         <p class="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-gray-100">From weddings to corporate gatherings, we make every moment special</p>
         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <a href="/packages" class="px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-purple-600 font-bold rounded-lg hover:shadow-lg transition text-sm sm:text-base">
+            <a href="/packages" class="px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-emerald-700 font-bold rounded-lg hover:shadow-lg transition text-sm sm:text-base">
                 Explore Packages
             </a>
-            <a href="/contact" class="px-6 sm:px-8 py-2.5 sm:py-3 bg-purple-700 text-white font-bold rounded-lg hover:bg-purple-800 transition text-sm sm:text-base">
+            <a href="/contact" class="px-6 sm:px-8 py-2.5 sm:py-3 bg-emerald-700 text-white font-bold rounded-lg hover:bg-emerald-800 transition text-sm sm:text-base">
                 Get Started
             </a>
         </div>
@@ -57,7 +57,7 @@
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Why Choose EventPro?</h2>
                 <ul class="space-y-4">
                     <li class="flex items-start">
-                        <svg class="h-5 sm:h-6 w-5 sm:w-6 text-purple-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="h-5 sm:h-6 w-5 sm:w-6 text-emerald-700 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                         </svg>
                         <div>
@@ -66,7 +66,7 @@
                         </div>
                     </li>
                     <li class="flex items-start">
-                        <svg class="h-5 sm:h-6 w-5 sm:w-6 text-purple-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="h-5 sm:h-6 w-5 sm:w-6 text-emerald-700 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                         </svg>
                         <div>
@@ -75,7 +75,7 @@
                         </div>
                     </li>
                     <li class="flex items-start">
-                        <svg class="h-5 sm:h-6 w-5 sm:w-6 text-purple-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="h-5 sm:h-6 w-5 sm:w-6 text-emerald-700 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                         </svg>
                         <div>
@@ -84,7 +84,7 @@
                         </div>
                     </li>
                     <li class="flex items-start">
-                        <svg class="h-5 sm:h-6 w-5 sm:w-6 text-purple-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="h-5 sm:h-6 w-5 sm:w-6 text-emerald-700 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                         </svg>
                         <div>
@@ -94,11 +94,11 @@
                     </li>
                 </ul>
             </div>
-            <div class="bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg p-6 sm:p-8 text-white">
+            <div class="bg-gradient-to-br from-emerald-400 to-amber-300 rounded-lg p-6 sm:p-8 text-white">
                 <p class="text-2xl sm:text-3xl font-bold mb-4">1000+</p>
                 <p class="text-base sm:text-lg mb-6">Successful Events Delivered</p>
                 <p class="mb-6 sm:mb-8 text-sm sm:text-base">Join thousands of happy clients who trust us with their special moments.</p>
-                <a href="/contact" class="inline-block px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-purple-600 font-bold rounded-lg hover:shadow-lg transition text-sm sm:text-base">
+                <a href="/contact" class="inline-block px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-emerald-700 font-bold rounded-lg hover:shadow-lg transition text-sm sm:text-base">
                     Start Planning
                 </a>
             </div>
@@ -107,11 +107,11 @@
 </section>
 
 <!-- CTA Section -->
-<section class="bg-purple-600 text-white py-12 sm:py-16">
+<section class="bg-emerald-600 text-white py-12 sm:py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Ready to Plan Your Event?</h2>
         <p class="text-sm sm:text-base md:text-lg mb-6 sm:mb-8">Let's turn your vision into reality. Contact us today for a consultation.</p>
-        <a href="/contact" class="inline-block px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-purple-600 font-bold rounded-lg hover:shadow-lg transition text-sm sm:text-base">
+        <a href="/contact" class="inline-block px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-emerald-700 font-bold rounded-lg hover:shadow-lg transition text-sm sm:text-base">
             Get In Touch
         </a>
     </div>

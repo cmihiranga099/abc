@@ -3,17 +3,17 @@
 @section('title', $booking->event_name . ' - EventPro')
 
 @section('content')
-<div class="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-slate-50 py-8 sm:py-12">
+<div class="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50 to-slate-50 py-8 sm:py-12">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->
         <div class="mb-8">
-            <a href="{{ route('bookings.index') }}" class="text-purple-600 hover:text-purple-800 font-medium">← Back to Bookings</a>
+            <a href="{{ route('bookings.index') }}" class="text-emerald-700 hover:text-emerald-800 font-medium">← Back to Bookings</a>
         </div>
 
         <!-- Booking Card -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
             <!-- Header with Status -->
-            <div class="bg-gradient-to-r {{ $booking->status === 'confirmed' ? 'from-green-500 to-emerald-600' : ($booking->status === 'completed' ? 'from-blue-500 to-cyan-600' : ($booking->status === 'cancelled' ? 'from-red-500 to-pink-600' : 'from-yellow-500 to-orange-600')) }} text-white p-6 sm:p-8">
+            <div class="bg-gradient-to-r {{ $booking->status === 'confirmed' ? 'from-green-500 to-emerald-600' : ($booking->status === 'completed' ? 'from-blue-500 to-cyan-600' : ($booking->status === 'cancelled' ? 'from-red-500 to-amber-500' : 'from-yellow-500 to-orange-600')) }} text-white p-6 sm:p-8">
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div>
                         <h1 class="text-2xl sm:text-3xl font-bold">{{ $booking->event_name }}</h1>
@@ -40,7 +40,7 @@
                     </div>
                     <div>
                         <p class="text-gray-600 text-sm font-medium">💰 Total Price</p>
-                        <p class="text-2xl font-bold text-purple-600">${{ number_format($booking->total_price, 2) }}</p>
+                        <p class="text-2xl font-bold text-emerald-700">${{ number_format($booking->total_price, 2) }}</p>
                     </div>
                 </div>
 

@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-purple-600 to-pink-600 text-white py-12 sm:py-16 md:py-24">
+<section class="relative bg-gradient-to-r from-emerald-600 to-amber-500 text-white py-12 sm:py-16 md:py-24">
     <div class="absolute inset-0 bg-black opacity-30"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Get In Touch</h1>
@@ -21,7 +21,7 @@
                 <div class="text-5xl mb-4">✉️</div>
                 <h3 class="text-xl font-bold mb-2">Email</h3>
                 <p class="text-gray-600 mb-4">Send us your inquiry anytime</p>
-                <a href="mailto:info@eventpro.com" class="text-purple-600 font-bold hover:text-purple-800">
+                <a href="mailto:info@eventpro.com" class="text-emerald-700 font-bold hover:text-emerald-800">
                     info@eventpro.com
                 </a>
                 <p class="text-sm text-gray-500 mt-2">Response time: Within 24 hours</p>
@@ -32,7 +32,7 @@
                 <div class="text-5xl mb-4">📞</div>
                 <h3 class="text-xl font-bold mb-2">Phone</h3>
                 <p class="text-gray-600 mb-4">Call us for immediate assistance</p>
-                <a href="tel:+15551234567" class="text-purple-600 font-bold hover:text-purple-800 text-lg">
+                <a href="tel:+15551234567" class="text-emerald-700 font-bold hover:text-emerald-800 text-lg">
                     +1 (555) 123-4567
                 </a>
                 <p class="text-sm text-gray-500 mt-2">Mon-Fri: 9AM - 6PM</p>
@@ -65,7 +65,7 @@
                             id="name" 
                             name="name"
                             required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                             placeholder="John Doe"
                         >
                     </div>
@@ -76,7 +76,7 @@
                             id="email" 
                             name="email"
                             required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                             placeholder="john@example.com"
                         >
                     </div>
@@ -90,7 +90,7 @@
                             id="phone" 
                             name="phone"
                             required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                             placeholder="(555) 123-4567"
                         >
                     </div>
@@ -101,7 +101,7 @@
                             id="event_date" 
                             name="event_date"
                             required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                         >
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                         id="event_type" 
                         name="event_type"
                         required
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                     >
                         <option value="">Select an event type</option>
                         <option value="wedding">Wedding</option>
@@ -131,7 +131,7 @@
                         name="message"
                         rows="5"
                         required
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                         placeholder="Tell us about your event and vision..."
                     ></textarea>
                 </div>
@@ -143,7 +143,7 @@
                         id="guest_count" 
                         name="guest_count"
                         min="1"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
                         placeholder="Number of guests"
                     >
                 </div>
@@ -154,7 +154,7 @@
                         id="terms" 
                         name="terms"
                         required
-                        class="h-4 w-4 text-purple-600"
+                        class="h-4 w-4 text-emerald-700"
                     >
                     <label for="terms" class="ml-2 text-sm text-gray-600">
                         I agree to be contacted about my inquiry
@@ -164,7 +164,7 @@
                 <div class="text-center">
                     <button 
                         type="submit"
-                        class="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-lg hover:shadow-lg transition"
+                        class="px-8 py-3 bg-gradient-to-r from-emerald-600 to-amber-500 text-white font-bold rounded-lg hover:shadow-lg transition"
                     >
                         Send Message
                     </button>
@@ -182,27 +182,27 @@
         
         <div class="space-y-6">
             <details class="bg-gray-50 rounded-lg p-6 cursor-pointer hover:bg-gray-100 transition" open>
-                <summary class="font-bold text-lg text-purple-600">How far in advance should I book?</summary>
+                <summary class="font-bold text-lg text-emerald-700">How far in advance should I book?</summary>
                 <p class="text-gray-600 mt-4">We recommend booking at least 3-6 months in advance for weddings and large events. For smaller gatherings, 1-2 months is usually sufficient. We also accept last-minute bookings based on availability.</p>
             </details>
 
             <details class="bg-gray-50 rounded-lg p-6 cursor-pointer hover:bg-gray-100 transition">
-                <summary class="font-bold text-lg text-purple-600">What is your cancellation policy?</summary>
+                <summary class="font-bold text-lg text-emerald-700">What is your cancellation policy?</summary>
                 <p class="text-gray-600 mt-4">Cancellations made 30 days before the event are eligible for a full refund. Cancellations within 30 days may incur a 50% service fee. For more details, please contact us directly.</p>
             </details>
 
             <details class="bg-gray-50 rounded-lg p-6 cursor-pointer hover:bg-gray-100 transition">
-                <summary class="font-bold text-lg text-purple-600">Do you work outside our city?</summary>
+                <summary class="font-bold text-lg text-emerald-700">Do you work outside our city?</summary>
                 <p class="text-gray-600 mt-4">Yes! We offer destination event planning services. We've organized events across the country and internationally. Additional travel costs will apply. Contact us for more information.</p>
             </details>
 
             <details class="bg-gray-50 rounded-lg p-6 cursor-pointer hover:bg-gray-100 transition">
-                <summary class="font-bold text-lg text-purple-600">Can you work within a specific budget?</summary>
+                <summary class="font-bold text-lg text-emerald-700">Can you work within a specific budget?</summary>
                 <p class="text-gray-600 mt-4">Absolutely! We specialize in creating amazing events at all price points. Tell us your budget and vision, and we'll design a package that works for you.</p>
             </details>
 
             <details class="bg-gray-50 rounded-lg p-6 cursor-pointer hover:bg-gray-100 transition">
-                <summary class="font-bold text-lg text-purple-600">What's included in full planning services?</summary>
+                <summary class="font-bold text-lg text-emerald-700">What's included in full planning services?</summary>
                 <p class="text-gray-600 mt-4">Our full planning services include venue selection, vendor coordination, budget management, design and styling, timeline creation, and day-of coordination. We handle every detail so you can relax and enjoy your event.</p>
             </details>
         </div>
@@ -210,7 +210,7 @@
 </section>
 
 <!-- Social Media CTA -->
-<section class="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-16">
+<section class="bg-gradient-to-r from-emerald-600 to-amber-500 text-white py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">Follow Us For Inspiration</h2>
         <p class="text-lg mb-8">Check out our latest events and ideas on social media</p>

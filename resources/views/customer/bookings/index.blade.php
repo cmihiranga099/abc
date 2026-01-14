@@ -3,7 +3,7 @@
 @section('title', 'My Bookings - EventPro')
 
 @section('content')
-<div class="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-slate-50 py-8 sm:py-12">
+<div class="min-h-screen bg-gradient-to-br from-slate-50 via-emerald-50 to-slate-50 py-8 sm:py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 sm:mb-12">
@@ -11,7 +11,7 @@
                 <h1 class="text-3xl sm:text-4xl font-bold mb-2">My Bookings</h1>
                 <p class="text-gray-600 text-sm sm:text-base">Manage all your event bookings and track their status</p>
             </div>
-            <a href="{{ route('bookings.create') }}" class="mt-4 sm:mt-0 px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-lg hover:shadow-lg transition inline-block text-sm sm:text-base">
+            <a href="{{ route('bookings.create') }}" class="mt-4 sm:mt-0 px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-emerald-600 to-amber-500 text-white font-bold rounded-lg hover:shadow-lg transition inline-block text-sm sm:text-base">
                 + New Booking
             </a>
         </div>
@@ -30,7 +30,7 @@
                         <div class="bg-gradient-to-r 
                             @if($booking->status === 'pending') from-yellow-500 to-orange-500
                             @elseif($booking->status === 'confirmed') from-green-500 to-emerald-500
-                            @elseif($booking->status === 'cancelled') from-red-500 to-pink-500
+                            @elseif($booking->status === 'cancelled') from-red-500 to-amber-400
                             @else from-blue-500 to-cyan-500
                             @endif
                             text-white p-4 sm:p-6">
@@ -73,14 +73,14 @@
                                 <span class="text-lg mr-3">💰</span>
                                 <div>
                                     <p class="text-xs text-gray-500">Total Price</p>
-                                    <p class="font-bold text-lg text-purple-600">${{ number_format($booking->total_price, 2) }}</p>
+                                    <p class="font-bold text-lg text-emerald-700">${{ number_format($booking->total_price, 2) }}</p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Actions -->
                         <div class="p-4 sm:p-6 border-t bg-gray-50 flex flex-col sm:flex-row gap-2">
-                            <a href="{{ route('bookings.show', $booking) }}" class="flex-1 text-center px-3 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-medium text-sm">
+                            <a href="{{ route('bookings.show', $booking) }}" class="flex-1 text-center px-3 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition font-medium text-sm">
                                 View Details
                             </a>
 
@@ -107,7 +107,7 @@
                 <div class="text-5xl mb-4">📭</div>
                 <h2 class="text-2xl font-bold text-gray-800 mb-2">No Bookings Yet</h2>
                 <p class="text-gray-600 mb-6">Start planning your perfect event by creating your first booking</p>
-                <a href="{{ route('bookings.create') }}" class="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:shadow-lg transition font-bold">
+                <a href="{{ route('bookings.create') }}" class="inline-block px-8 py-3 bg-gradient-to-r from-emerald-600 to-amber-500 text-white rounded-lg hover:shadow-lg transition font-bold">
                     Create Your First Booking
                 </a>
             </div>

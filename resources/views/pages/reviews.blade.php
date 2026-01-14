@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-purple-600 to-pink-600 text-white py-12 sm:py-16 md:py-24">
+<section class="relative bg-gradient-to-r from-emerald-600 to-amber-500 text-white py-12 sm:py-16 md:py-24">
     <div class="absolute inset-0 bg-black opacity-30"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">What Our Clients Say</h1>
@@ -17,19 +17,19 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 text-center mb-12 sm:mb-16">
             <div>
-                <p class="text-3xl sm:text-4xl md:text-5xl font-bold text-purple-600 mb-2">4.9/5</p>
+                <p class="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-700 mb-2">4.9/5</p>
                 <div class="flex justify-center mb-2">
                     <span class="text-yellow-400 text-xl sm:text-2xl">★★★★★</span>
                 </div>
                 <p class="text-gray-600 text-sm sm:text-base">Average Rating</p>
             </div>
             <div>
-                <p class="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-600 mb-2">1000+</p>
+                <p class="text-3xl sm:text-4xl md:text-5xl font-bold text-amber-600 mb-2">1000+</p>
                 <p class="text-gray-600 text-sm sm:text-base md:text-lg">Happy Clients</p>
                 <p class="text-gray-500 text-xs sm:text-sm">Across various event types</p>
             </div>
             <div>
-                <p class="text-3xl sm:text-4xl md:text-5xl font-bold text-purple-600 mb-2">98%</p>
+                <p class="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-700 mb-2">98%</p>
                 <p class="text-gray-600 text-sm sm:text-base md:text-lg">Satisfaction Rate</p>
                 <p class="text-gray-500 text-xs sm:text-sm">Would recommend to a friend</p>
             </div>
@@ -46,7 +46,7 @@
             <!-- Review 1 -->
             <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition">
                 <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                    <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-amber-300 rounded-full flex items-center justify-center text-white text-xl font-bold">
                         JM
                     </div>
                     <div class="ml-4">
@@ -64,7 +64,7 @@
             <!-- Review 2 -->
             <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition">
                 <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-emerald-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
                         RC
                     </div>
                     <div class="ml-4">
@@ -82,7 +82,7 @@
             <!-- Review 3 -->
             <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition">
                 <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-pink-400 to-orange-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                    <div class="w-12 h-12 bg-gradient-to-br from-amber-300 to-orange-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
                         SR
                     </div>
                     <div class="ml-4">
@@ -118,7 +118,7 @@
             <!-- Review 5 -->
             <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition">
                 <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                    <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-blue-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
                         ES
                     </div>
                     <div class="ml-4">
@@ -136,7 +136,7 @@
             <!-- Review 6 -->
             <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition">
                 <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                    <div class="w-12 h-12 bg-gradient-to-br from-amber-300 to-emerald-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
                         ML
                     </div>
                     <div class="ml-4">
@@ -159,17 +159,17 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Highly Rated For</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg p-8 text-center">
+            <div class="bg-gradient-to-br from-emerald-100 to-amber-50 rounded-lg p-8 text-center">
                 <p class="text-5xl mb-4">⭐</p>
                 <h3 class="text-2xl font-bold mb-2">Professionalism</h3>
                 <p class="text-gray-600">Expert team handling every aspect</p>
             </div>
-            <div class="bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg p-8 text-center">
+            <div class="bg-gradient-to-br from-blue-100 to-emerald-100 rounded-lg p-8 text-center">
                 <p class="text-5xl mb-4">💡</p>
                 <h3 class="text-2xl font-bold mb-2">Creativity</h3>
                 <p class="text-gray-600">Unique ideas that make events memorable</p>
             </div>
-            <div class="bg-gradient-to-br from-pink-100 to-orange-100 rounded-lg p-8 text-center">
+            <div class="bg-gradient-to-br from-amber-100 to-orange-100 rounded-lg p-8 text-center">
                 <p class="text-5xl mb-4">✨</p>
                 <h3 class="text-2xl font-bold mb-2">Attention to Detail</h3>
                 <p class="text-gray-600">Nothing overlooked, everything perfect</p>
@@ -179,11 +179,11 @@
 </section>
 
 <!-- Call to Action -->
-<section class="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-16">
+<section class="bg-gradient-to-r from-emerald-600 to-amber-500 text-white py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Join Our Happy Clients?</h2>
         <p class="text-lg mb-8">Let us create your unforgettable event experience</p>
-        <a href="/contact" class="inline-block px-8 py-3 bg-white text-purple-600 font-bold rounded-lg hover:shadow-lg transition">
+        <a href="/contact" class="inline-block px-8 py-3 bg-white text-emerald-700 font-bold rounded-lg hover:shadow-lg transition">
             Get Your Quote Today
         </a>
     </div>
