@@ -168,32 +168,113 @@
                     </div>
                 </div>
 
-                <!-- Spotlight -->
-                <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                    <h2 class="text-lg font-semibold text-slate-900">Quick overview</h2>
-                    <p class="mt-2 text-sm text-slate-500">Track what matters most for your upcoming events.</p>
+                <div class="space-y-6">
+                    <!-- Spotlight -->
+                    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                        <h2 class="text-lg font-semibold text-slate-900">Quick overview</h2>
+                        <p class="mt-2 text-sm text-slate-500">Track what matters most for your upcoming events.</p>
 
-                    <div class="mt-6 space-y-4">
-                        <div class="rounded-xl border border-emerald-100 bg-emerald-50/60 p-4">
-                            <p class="text-xs uppercase tracking-wide text-emerald-700">Next action</p>
-                            <p class="mt-1 text-sm font-semibold text-slate-900">Confirm pending bookings</p>
-                            <p class="mt-2 text-xs text-slate-500">Pending bookings can be edited until payment.</p>
-                            <a href="{{ route('bookings.index') }}" class="mt-3 inline-flex text-xs font-semibold text-emerald-700 hover:text-emerald-800">Review pending</a>
+                        <div class="mt-6 space-y-4">
+                            <div class="rounded-xl border border-emerald-100 bg-emerald-50/60 p-4">
+                                <p class="text-xs uppercase tracking-wide text-emerald-700">Next action</p>
+                                <p class="mt-1 text-sm font-semibold text-slate-900">Confirm pending bookings</p>
+                                <p class="mt-2 text-xs text-slate-500">Pending bookings can be edited until payment.</p>
+                                <a href="{{ route('bookings.index') }}" class="mt-3 inline-flex text-xs font-semibold text-emerald-700 hover:text-emerald-800">Review pending</a>
+                            </div>
+
+                            <div class="rounded-xl border border-amber-100 bg-amber-50/60 p-4">
+                                <p class="text-xs uppercase tracking-wide text-amber-700">Payments</p>
+                                <p class="mt-1 text-sm font-semibold text-slate-900">View payment history</p>
+                                <p class="mt-2 text-xs text-slate-500">See completed and refunded transactions.</p>
+                                <a href="{{ route('payments.history') }}" class="mt-3 inline-flex text-xs font-semibold text-amber-700 hover:text-amber-800">Go to payments</a>
+                            </div>
+
+                            <div class="rounded-xl border border-slate-200 bg-white p-4">
+                                <p class="text-xs uppercase tracking-wide text-slate-500">Support</p>
+                                <p class="mt-1 text-sm font-semibold text-slate-900">Need help with your booking?</p>
+                                <p class="mt-2 text-xs text-slate-500">Our team responds within 24 hours.</p>
+                                <a href="{{ route('contact') }}" class="mt-3 inline-flex text-xs font-semibold text-slate-700 hover:text-slate-900">Contact support</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile card -->
+                    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-lg font-semibold text-slate-900">Profile</h2>
+                            <a href="{{ route('profile.edit') }}" class="text-xs font-semibold text-emerald-700 hover:text-emerald-800">Full profile</a>
                         </div>
 
-                        <div class="rounded-xl border border-amber-100 bg-amber-50/60 p-4">
-                            <p class="text-xs uppercase tracking-wide text-amber-700">Payments</p>
-                            <p class="mt-1 text-sm font-semibold text-slate-900">View payment history</p>
-                            <p class="mt-2 text-xs text-slate-500">See completed and refunded transactions.</p>
-                            <a href="{{ route('payments.history') }}" class="mt-3 inline-flex text-xs font-semibold text-amber-700 hover:text-amber-800">Go to payments</a>
-                        </div>
+                        <form method="post" action="{{ route('profile.update') }}" class="mt-4 space-y-4" enctype="multipart/form-data">
+                            @csrf
+                            @method('patch')
 
-                        <div class="rounded-xl border border-slate-200 bg-white p-4">
-                            <p class="text-xs uppercase tracking-wide text-slate-500">Support</p>
-                            <p class="mt-1 text-sm font-semibold text-slate-900">Need help with your booking?</p>
-                            <p class="mt-2 text-xs text-slate-500">Our team responds within 24 hours.</p>
-                            <a href="{{ route('contact') }}" class="mt-3 inline-flex text-xs font-semibold text-slate-700 hover:text-slate-900">Contact support</a>
-                        </div>
+                            <div class="flex items-center gap-4 rounded-xl border border-emerald-100 bg-emerald-50/50 p-4">
+                                <div class="h-12 w-12 overflow-hidden rounded-full bg-white">
+                                    @if ($user->avatar_path)
+                                        <img src="{{ Storage::url($user->avatar_path) }}" alt="{{ $user->name }}" class="h-full w-full object-cover">
+                                    @else
+                                        <div class="flex h-full w-full items-center justify-center bg-emerald-100 text-emerald-700 font-semibold">
+                                            {{ strtoupper(substr($user->name, 0, 1)) }}
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="flex-1">
+                                    <label class="block text-xs font-semibold text-slate-600" for="dashboard_avatar">Update photo</label>
+                                    <input id="dashboard_avatar" name="avatar" type="file" accept="image/png,image/jpeg,image/webp" class="mt-1 block w-full text-xs text-slate-600 file:mr-3 file:rounded-lg file:border-0 file:bg-emerald-600 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-white hover:file:bg-emerald-700">
+                                    @error('avatar') <p class="text-xs text-rose-600 mt-1">{{ $message }}</p> @enderror
+                                </div>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600" for="dashboard_name">Name</label>
+                                    <input id="dashboard_name" name="name" type="text" class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-emerald-400" value="{{ old('name', $user->name) }}" required>
+                                    @error('name') <p class="text-xs text-rose-600 mt-1">{{ $message }}</p> @enderror
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600" for="dashboard_email">Email</label>
+                                    <input id="dashboard_email" name="email" type="email" class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-emerald-400" value="{{ old('email', $user->email) }}" required>
+                                    @error('email') <p class="text-xs text-rose-600 mt-1">{{ $message }}</p> @enderror
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600" for="dashboard_phone">Phone</label>
+                                    <input id="dashboard_phone" name="phone" type="text" class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-emerald-400" value="{{ old('phone', $user->phone) }}">
+                                    @error('phone') <p class="text-xs text-rose-600 mt-1">{{ $message }}</p> @enderror
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600" for="dashboard_address">Address</label>
+                                    <input id="dashboard_address" name="address_line" type="text" class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-emerald-400" value="{{ old('address_line', $user->address_line) }}">
+                                    @error('address_line') <p class="text-xs text-rose-600 mt-1">{{ $message }}</p> @enderror
+                                </div>
+                                <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-600" for="dashboard_city">City</label>
+                                        <input id="dashboard_city" name="city" type="text" class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-emerald-400" value="{{ old('city', $user->city) }}">
+                                        @error('city') <p class="text-xs text-rose-600 mt-1">{{ $message }}</p> @enderror
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-600" for="dashboard_country">Country</label>
+                                        <input id="dashboard_country" name="country" type="text" class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-emerald-400" value="{{ old('country', $user->country) }}">
+                                        @error('country') <p class="text-xs text-rose-600 mt-1">{{ $message }}</p> @enderror
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600" for="dashboard_bio">Short Bio</label>
+                                    <textarea id="dashboard_bio" name="bio" rows="3" class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-emerald-400">{{ old('bio', $user->bio) }}</textarea>
+                                    @error('bio') <p class="text-xs text-rose-600 mt-1">{{ $message }}</p> @enderror
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-between gap-3">
+                                <p class="text-xs text-slate-500">Update your profile quickly.</p>
+                                <button type="submit" class="rounded-lg bg-emerald-600 px-4 py-2 text-xs font-semibold text-white hover:bg-emerald-700">Save</button>
+                            </div>
+
+                            @if (session('status') === 'profile-updated')
+                                <p class="text-xs text-emerald-600">Profile updated.</p>
+                            @endif
+                        </form>
                     </div>
                 </div>
             </div>
