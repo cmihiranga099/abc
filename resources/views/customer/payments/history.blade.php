@@ -11,7 +11,7 @@
             <div class="max-w-5xl">
         <!-- Header -->
         <div class="mb-8">
-            <a href="{{ route('bookings.index') }}" class="text-emerald-700 hover:text-emerald-800 font-medium">← Back to Bookings</a>
+            <a href="{{ route('bookings.index') }}" class="text-emerald-700 hover:text-emerald-800 font-medium">â† Back to Bookings</a>
             <h1 class="text-3xl sm:text-4xl font-bold mt-4 mb-2">Payment History</h1>
             <p class="text-gray-600">View all your transactions and payment records</p>
         </div>
@@ -20,19 +20,19 @@
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                 <!-- Total Spent -->
                 <div class="bg-gradient-to-br from-emerald-500 to-emerald-600 text-white rounded-lg shadow-lg p-6">
-                    <p class="text-white/80 text-sm mb-1">dY'� Total Spent</p>
+                    <p class="text-white/80 text-sm mb-1">Total Spent</p>
                     <p class="text-3xl font-bold">${{ number_format($payments->where('status', 'completed')->sum('amount'), 2) }}</p>
                 </div>
 
                 <!-- Total Transactions -->
                 <div class="bg-gradient-to-br from-amber-100 to-amber-200 text-slate-900 rounded-lg shadow-lg p-6">
-                    <p class="text-slate-600 text-sm mb-1">dY"S Total Payments</p>
+                    <p class="text-slate-600 text-sm mb-1">Total Payments</p>
                     <p class="text-3xl font-bold text-slate-900">{{ $payments->count() }}</p>
                 </div>
 
                 <!-- Refunded -->
                 <div class="bg-gradient-to-br from-slate-100 to-slate-200 text-slate-900 rounded-lg shadow-lg p-6">
-                    <p class="text-slate-600 text-sm mb-1">dY", Refunded</p>
+                    <p class="text-slate-600 text-sm mb-1">Refunded</p>
                     <p class="text-3xl font-bold text-slate-900">${{ number_format($payments->where('status', 'refunded')->sum('amount'), 2) }}</p>
                 </div>
             </div>
@@ -67,23 +67,23 @@
                                     <td class="px-6 py-4">
                                         <p class="text-sm text-gray-700">
                                             @if($payment->payment_method === 'card')
-                                                💳 Card
+                                                ðŸ’³ Card
                                             @elseif($payment->payment_method === 'bank_transfer')
-                                                🏦 Bank Transfer
+                                                ðŸ¦ Bank Transfer
                                             @else
-                                                👛 Wallet
+                                                ðŸ‘› Wallet
                                             @endif
                                         </p>
                                     </td>
                                     <td class="px-6 py-4">
                                         @if($payment->status === 'completed')
-                                            <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full">✓ Completed</span>
+                                            <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full">âœ“ Completed</span>
                                         @elseif($payment->status === 'pending')
-                                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold rounded-full">⏳ Pending</span>
+                                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold rounded-full">â³ Pending</span>
                                         @elseif($payment->status === 'failed')
-                                            <span class="px-3 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-full">✗ Failed</span>
+                                            <span class="px-3 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-full">âœ— Failed</span>
                                         @else
-                                            <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs font-bold rounded-full">🔄 Refunded</span>
+                                            <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs font-bold rounded-full">ðŸ”„ Refunded</span>
                                         @endif
                                     </td>
                                     <td class="px-6 py-4">
@@ -119,13 +119,13 @@
                                     <p class="text-xs text-gray-600 mt-1">{{ $payment->created_at->format('M j, Y g:i A') }}</p>
                                 </div>
                                 @if($payment->status === 'completed')
-                                    <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full">✓</span>
+                                    <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full">âœ“</span>
                                 @elseif($payment->status === 'pending')
-                                    <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold rounded-full">⏳</span>
+                                    <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold rounded-full">â³</span>
                                 @elseif($payment->status === 'failed')
-                                    <span class="px-2 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-full">✗</span>
+                                    <span class="px-2 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-full">âœ—</span>
                                 @else
-                                    <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs font-bold rounded-full">🔄</span>
+                                    <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs font-bold rounded-full">ðŸ”„</span>
                                 @endif
                             </div>
 
@@ -138,11 +138,11 @@
                                     <p class="text-gray-600 text-xs">Method</p>
                                     <p class="font-bold text-gray-900">
                                         @if($payment->payment_method === 'card')
-                                            💳 Card
+                                            ðŸ’³ Card
                                         @elseif($payment->payment_method === 'bank_transfer')
-                                            🏦 Bank
+                                            ðŸ¦ Bank
                                         @else
-                                            👛 Wallet
+                                            ðŸ‘› Wallet
                                         @endif
                                     </p>
                                 </div>
@@ -170,7 +170,7 @@
         @else
             <!-- Empty State -->
             <div class="bg-white rounded-lg shadow-lg p-8 sm:p-12 text-center">
-                <p class="text-5xl mb-4">📭</p>
+                <p class="text-5xl mb-4">ðŸ“­</p>
                 <h3 class="text-xl font-bold text-gray-800 mb-2">No Payments Yet</h3>
                 <p class="text-gray-600 mb-6">You haven't made any payments yet. Create your first booking to get started!</p>
                 <a href="{{ route('bookings.create') }}" class="inline-block px-6 py-2.5 bg-gradient-to-r from-emerald-600 to-amber-500 text-white rounded-lg hover:shadow-lg transition font-bold">
@@ -183,5 +183,6 @@
     </div>
 </div>
 @endsection
+
 
 
