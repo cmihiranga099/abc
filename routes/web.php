@@ -23,6 +23,7 @@ Route::get('/services', [PageController::class, 'services'])->name('services');
 Route::get('/customize', [PageController::class, 'customize'])->name('customize');
 Route::get('/reviews', [PageController::class, 'reviews'])->name('reviews');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::post('/contact', [PageController::class, 'submitContact'])->name('contact.submit');
 
 // Dashboard Routes
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');

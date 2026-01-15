@@ -55,7 +55,12 @@
         <!-- Contact Form -->
         <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
             <h2 class="text-3xl font-bold mb-8 text-center">Send Us A Message</h2>
-            <form action="#" method="POST" class="max-w-2xl mx-auto">
+            @if(session('success'))
+                <div class="mb-6 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
+                    {{ session('success') }}
+                </div>
+            @endif
+            <form action="{{ route('contact.submit') }}" method="POST" class="max-w-2xl mx-auto">
                 @csrf
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
