@@ -15,26 +15,25 @@
             <h1 class="text-3xl sm:text-4xl font-bold mt-4 mb-2">Payment History</h1>
             <p class="text-gray-600">View all your transactions and payment records</p>
         </div>
-
         <!-- Summary Cards -->
         @if($payments->count() > 0)
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                 <!-- Total Spent -->
                 <div class="bg-gradient-to-br from-emerald-500 to-emerald-600 text-white rounded-lg shadow-lg p-6">
-                    <p class="text-white/80 text-sm mb-1">💰 Total Spent</p>
+                    <p class="text-white/80 text-sm mb-1">dY'� Total Spent</p>
                     <p class="text-3xl font-bold">${{ number_format($payments->where('status', 'completed')->sum('amount'), 2) }}</p>
                 </div>
 
                 <!-- Total Transactions -->
-                <div class="bg-gradient-to-br from-amber-500 to-amber-600 text-white rounded-lg shadow-lg p-6">
-                    <p class="text-white/80 text-sm mb-1">📊 Total Payments</p>
-                    <p class="text-3xl font-bold">{{ $payments->count() }}</p>
+                <div class="bg-gradient-to-br from-amber-100 to-amber-200 text-slate-900 rounded-lg shadow-lg p-6">
+                    <p class="text-slate-600 text-sm mb-1">dY"S Total Payments</p>
+                    <p class="text-3xl font-bold text-slate-900">{{ $payments->count() }}</p>
                 </div>
 
                 <!-- Refunded -->
-                <div class="bg-gradient-to-br from-slate-500 to-slate-600 text-white rounded-lg shadow-lg p-6">
-                    <p class="text-white/80 text-sm mb-1">🔄 Refunded</p>
-                    <p class="text-3xl font-bold">${{ number_format($payments->where('status', 'refunded')->sum('amount'), 2) }}</p>
+                <div class="bg-gradient-to-br from-slate-100 to-slate-200 text-slate-900 rounded-lg shadow-lg p-6">
+                    <p class="text-slate-600 text-sm mb-1">dY", Refunded</p>
+                    <p class="text-3xl font-bold text-slate-900">${{ number_format($payments->where('status', 'refunded')->sum('amount'), 2) }}</p>
                 </div>
             </div>
         @endif
@@ -184,3 +183,5 @@
     </div>
 </div>
 @endsection
+
+

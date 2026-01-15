@@ -32,6 +32,10 @@
                 <span class="h-2 w-2 rounded-full bg-sky-400"></span>
                 Packages
             </a>
+            <a href="{{ route('services') }}" class="flex items-center gap-3 rounded-xl px-3 py-2 {{ $active === 'services' ? 'bg-emerald-50 font-semibold text-emerald-700' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900' }}">
+                <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                Services
+            </a>
             <a href="{{ route('profile.edit') }}" class="flex items-center gap-3 rounded-xl px-3 py-2 {{ $active === 'profile' ? 'bg-emerald-50 font-semibold text-emerald-700' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900' }}">
                 <span class="h-2 w-2 rounded-full bg-slate-400"></span>
                 Profile

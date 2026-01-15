@@ -28,6 +28,10 @@
                 <span class="h-2 w-2 rounded-full bg-amber-500"></span>
                 Packages
             </a>
+            <a href="{{ route('services') }}" class="flex items-center gap-3 rounded-xl px-3 py-2 {{ $active === 'services' ? 'bg-slate-100 font-semibold text-slate-900' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900' }}">
+                <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                Services
+            </a>
             <a href="{{ route('admin.bookings.index') }}" class="flex items-center gap-3 rounded-xl px-3 py-2 {{ $active === 'bookings' ? 'bg-slate-100 font-semibold text-slate-900' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900' }}">
                 <span class="h-2 w-2 rounded-full bg-sky-500"></span>
                 Bookings

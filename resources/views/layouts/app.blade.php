@@ -43,6 +43,9 @@
                         <a href="/packages" class="px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('packages') ? 'bg-emerald-100 text-emerald-700' : 'text-slate-700 hover:bg-gray-100' }}">
                             Packages
                         </a>
+                        <a href="/services" class="px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('services') ? 'bg-emerald-100 text-emerald-700' : 'text-slate-700 hover:bg-gray-100' }}">
+                            Services
+                        </a>
                         <a href="/reviews" class="px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('reviews') ? 'bg-emerald-100 text-emerald-700' : 'text-slate-700 hover:bg-gray-100' }}">
                             Reviews
                         </a>
@@ -89,6 +92,9 @@
                     </a>
                     <a href="/packages" class="block px-3 py-2 rounded-md text-base font-medium {{ request()->routeIs('packages') ? 'bg-emerald-100 text-emerald-700' : 'text-slate-700 hover:bg-gray-100' }}">
                         Packages
+                    </a>
+                    <a href="/services" class="block px-3 py-2 rounded-md text-base font-medium {{ request()->routeIs('services') ? 'bg-emerald-100 text-emerald-700' : 'text-slate-700 hover:bg-gray-100' }}">
+                        Services
                     </a>
                     <a href="/reviews" class="block px-3 py-2 rounded-md text-base font-medium {{ request()->routeIs('reviews') ? 'bg-emerald-100 text-emerald-700' : 'text-slate-700 hover:bg-gray-100' }}">
                         Reviews
@@ -140,16 +146,17 @@
                             <li><a href="/" class="hover:text-amber-400 transition">Home</a></li>
                             <li><a href="/about" class="hover:text-amber-400 transition">About</a></li>
                             <li><a href="/packages" class="hover:text-amber-400 transition">Packages</a></li>
+                            <li><a href="/services" class="hover:text-amber-400 transition">Services</a></li>
                             <li><a href="/contact" class="hover:text-amber-400 transition">Contact</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="text-white font-bold mb-4">Services</h4>
                         <ul class="space-y-2 text-sm">
-                            <li><a href="{{ route('packages') }}" class="hover:text-amber-400 transition">Wedding Planning</a></li>
-                            <li><a href="{{ route('packages') }}" class="hover:text-amber-400 transition">Corporate Events</a></li>
-                            <li><a href="{{ route('packages') }}" class="hover:text-amber-400 transition">Birthday Parties</a></li>
-                            <li><a href="{{ route('packages') }}" class="hover:text-amber-400 transition">Concerts</a></li>
+                            <li><a href="{{ route('services') }}#wedding-planning" class="hover:text-amber-400 transition">Wedding Planning</a></li>
+                            <li><a href="{{ route('services') }}#corporate-events" class="hover:text-amber-400 transition">Corporate Events</a></li>
+                            <li><a href="{{ route('services') }}#birthday-parties" class="hover:text-amber-400 transition">Birthday Parties</a></li>
+                            <li><a href="{{ route('services') }}#concerts" class="hover:text-amber-400 transition">Concerts</a></li>
                         </ul>
                     </div>
                     <div>

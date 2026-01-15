@@ -161,49 +161,6 @@
     </div>
 </section>
 
-<!-- Services -->
-<section class="py-16 md:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Services</h2>
-        <p class="text-center text-gray-600 mb-10">Choose a service, customize it, and book instantly.</p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:shadow-lg transition">
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Wedding Planning</h3>
-                <p class="text-sm text-slate-600 mb-6">Full-service planning, design, and coordination.</p>
-                <div class="flex gap-3">
-                    <a href="{{ route('customize', ['service' => 'Wedding Planning']) }}" class="flex-1 text-center rounded-lg border border-emerald-600 px-3 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">Customize</a>
-                    <a href="{{ route('customize', ['service' => 'Wedding Planning']) }}" class="flex-1 text-center rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Book</a>
-                </div>
-            </div>
-            <div class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:shadow-lg transition">
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Corporate Events</h3>
-                <p class="text-sm text-slate-600 mb-6">Conferences, launches, and team experiences.</p>
-                <div class="flex gap-3">
-                    <a href="{{ route('customize', ['service' => 'Corporate Events']) }}" class="flex-1 text-center rounded-lg border border-emerald-600 px-3 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">Customize</a>
-                    <a href="{{ route('customize', ['service' => 'Corporate Events']) }}" class="flex-1 text-center rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Book</a>
-                </div>
-            </div>
-            <div class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:shadow-lg transition">
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Birthday Parties</h3>
-                <p class="text-sm text-slate-600 mb-6">Themes, decor, entertainment, and catering.</p>
-                <div class="flex gap-3">
-                    <a href="{{ route('customize', ['service' => 'Birthday Parties']) }}" class="flex-1 text-center rounded-lg border border-emerald-600 px-3 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">Customize</a>
-                    <a href="{{ route('customize', ['service' => 'Birthday Parties']) }}" class="flex-1 text-center rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Book</a>
-                </div>
-            </div>
-            <div class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm hover:shadow-lg transition">
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Concerts</h3>
-                <p class="text-sm text-slate-600 mb-6">Stage, sound, logistics, and security planning.</p>
-                <div class="flex gap-3">
-                    <a href="{{ route('customize', ['service' => 'Concerts']) }}" class="flex-1 text-center rounded-lg border border-emerald-600 px-3 py-2 text-sm font-semibold text-emerald-700 hover:bg-emerald-50">Customize</a>
-                    <a href="{{ route('customize', ['service' => 'Concerts']) }}" class="flex-1 text-center rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Book</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Service Add-ons -->
 <section class="py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

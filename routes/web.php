@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/packages', [PageController::class, 'packages'])->name('packages');
+Route::get('/services', [PageController::class, 'services'])->name('services');
 Route::get('/customize', [PageController::class, 'customize'])->name('customize');
 Route::get('/reviews', [PageController::class, 'reviews'])->name('reviews');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
